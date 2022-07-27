@@ -7,6 +7,22 @@ export default function NotesPage() {
 
 
     return (
-        
+        <div className = 'content'>
+            <div className = 'notes'>
+
+            </div>
+
+            <div className = 'box'>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
     )
 }
