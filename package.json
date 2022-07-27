@@ -1,0 +1,11 @@
+{
+  "name": "plannerproject1",
+  "version": "1.0.0",
+  "description": "Notes website with a week planner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Angelo Bellizzi",
+  "license": "ISC"
+}
