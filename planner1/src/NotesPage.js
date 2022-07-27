@@ -7,10 +7,15 @@ export default function NotesPage() {
 
 
     return (
-        <div className = 'content'>
-            <div className = 'notes'>
+        <div>
+            <div className = 'content'>
+                <div className = 'notes'>
+                    <div className = 'note-toolbar'>
 
+                    </div>
+                </div>
             </div>
+            
 
             <div className = 'box'>
                 <ul>

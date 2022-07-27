@@ -4,16 +4,18 @@
 	height: 100vh;
 	overflow: hidden;
 }
+
 .box ul li {
 	position: absolute;
 	width: 35px;
 	height: 35px;
 	list-style: none;
 	opacity: 0;
-	background: radial-gradient(deepskyblue, transparent, transparent);
+	background: radial-gradient(rgb(229, 255, 0), transparent, transparent);
 	bottom: 0;
 	left: 10vw;
 	animation: animate 15s linear infinite;
+	z-index: 0;
 }
 .box ul li:nth-child(2) {
 	left: 36vw;
@@ -51,10 +53,24 @@
 .notes {
     height: 350px;
     width: 350px;
-    margin: 15px;
+    margin: 30px;
     background-color: yellow;
     border-radius: 10px;
+	position: relative;
+	z-index: 1;
 }
+
+.note-toolbar{
+	height: 50px;
+	width: 350px;
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+	background-color: rgb(199, 155, 13);
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	bottom: 0;
+  }
 
 .notes:hover  {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
