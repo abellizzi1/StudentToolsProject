@@ -22,8 +22,8 @@ function Sidebar() {
         <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
           <ul className='sidebar-menu-items' onClick={showSidebar}>
             <li className='sidebar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
+              <Link to='#' className='close-button'>
+                <AiIcons.AiOutlineCloseCircle />
               </Link>
             </li>
             {SidebarOptions.map((item, index) => {

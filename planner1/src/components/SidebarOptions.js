@@ -7,8 +7,8 @@ export const SidebarOptions = [
   {
     title: 'Notes',
     path: '/',
-    icon: <AiIcons.AiFillHome />,
-    cName: 'nav-text'
+    icon: <AiIcons.AiTwotoneEdit />,
+    cName: 'sidebar-text'
   }
   /*,
   {

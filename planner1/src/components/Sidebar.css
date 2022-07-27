@@ -1,9 +1,10 @@
 .sidebar {
-    background-color: #060b26;
+    background-color: rgb(48, 48, 48);
     height: 80px;
     display: flex;
     justify-content: start;
     align-items: center;
+    overflow:hidden;
   }
   
   .menu-bars {
@@ -11,9 +12,14 @@
     font-size: 2rem;
     background: none;
   }
+
+  .close-button {
+    font-size: 2rem;
+    background: none;
+  }
   
   .sidebar-menu {
-    background-color: #060b26;
+    background-color: rgb(48, 48, 48);
     width: 250px;
     height: 100vh;
     display: flex;
@@ -21,19 +27,20 @@
     position: fixed;
     top: 0;
     left: -100%;
-    transition: 850ms;
+    transition: 2s;
+    z-index: 2;
   }
   
   .sidebar-menu.active {
     left: 0;
-    transition: 350ms;
+    transition: 1s;
   }
   
   .sidebar-text {
     display: flex;
     justify-content: start;
-    align-items: center;
-    padding: 8px 0px 8px 16px;
+    align-items: left;
+    padding: 8px 0px 8px 0px;
     list-style: none;
     height: 60px;
   }
@@ -48,6 +55,8 @@
     align-items: center;
     padding: 0 16px;
     border-radius: 4px;
+    transition-timing-function: ease-out;
+	transition: 0.3s;
   }
   
   .sidebar-text a:hover {
@@ -59,7 +68,7 @@
   }
   
   .sidebar-toggle {
-    background-color: #060b26;
+    background-color: rgb(48, 48, 48);
     width: 100%;
     height: 80px;
     display: flex;
