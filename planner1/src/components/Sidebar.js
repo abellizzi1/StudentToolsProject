@@ -18,6 +18,7 @@ function Sidebar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <h1 className = 'h1'>Placeholder</h1>
         </div>
         <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
           <ul className='sidebar-menu-items' onClick={showSidebar}>

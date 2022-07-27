@@ -7,6 +7,13 @@
     overflow:hidden;
   }
   
+.h1 {
+    text-align: center;
+    color: white;
+    margin-left: 2%;
+    margin-top: 0.8%;
+}
+
   .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
@@ -48,7 +55,7 @@
   .sidebar-text a {
     text-decoration: none;
     color: #f5f5f5;
-    font-size: 18px;
+    font-size: 22px;
     width: 95%;
     height: 100%;
     display: flex;
@@ -61,6 +68,11 @@
   
   .sidebar-text a:hover {
     background-color: #1a83ff;
+  }
+
+  .sidebar-text a:active {
+    width: 85%;
+    height: 90%;
   }
   
   .sidebar-menu-items {
