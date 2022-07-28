@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -11,6 +11,10 @@ function Sidebar() {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  useEffect(() => {
+    document.getElementById('currPage').textContent = sessionStorage.getItem('currentPage');
+  }, []);
+
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
@@ -18,7 +22,7 @@ function Sidebar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <h1 className = 'h1'>Placeholder</h1>
+          <h1 id='currPage' className='h1'>Notes</h1>
         </div>
         <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
           <ul className='sidebar-menu-items' onClick={showSidebar}>
