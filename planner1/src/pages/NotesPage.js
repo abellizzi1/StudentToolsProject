@@ -37,13 +37,6 @@ export default function NotesPage() {
             <div className = 'content'>
                 <button onClick={addNote} className='addNoteButton'>Add Note</button>
                 <div id='allNotes'/>
-
-                <div className = 'notes'>
-                    <div className = 'note-toolbar'>
-                    </div>
-                    
-
-                </div>
             </div>
             
         </div>

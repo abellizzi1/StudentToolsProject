@@ -7,7 +7,7 @@ export const SidebarOptions = [
   {
     title: 'Notes',
     path: '/',
-    icon: <AiIcons.AiTwotoneEdit />,
+    icon: <FaIcons.FaRegStickyNote />,
     cName: 'sidebar-text'
   }
   /*,

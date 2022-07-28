@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactHtmlParser from 'react-html-parser';
+import * as FaIcons from 'react-icons/fa';
 
 const MultilineEdit = ({ value, setValue }) => {
     const [editingValue, setEditingValue] = React.useState(value);
@@ -49,7 +50,7 @@ const MultilineEdit = ({ value, setValue }) => {
   
   const EditableText = () => {
     const [multilineValue, setMultilineValue] = React.useState(
-      "This is the multi-line version!"
+      "Type here to edit note"
     );
   
     return (
@@ -82,6 +83,7 @@ class Note extends React.Component {
             const ret = (
                 <div id={ReactHtmlParser(noteIndex)} className = 'notes'>
                     <div className = 'note-toolbar'>
+                        
                     </div>
                     <EditableText />
                 </div>
@@ -112,6 +114,7 @@ class Note extends React.Component {
                 const tempRet = (
                     <div id={ReactHtmlParser(tempNoteIdx)} className = 'notes'>
                         <div className = 'note-toolbar'>
+                            <button className='close-button'>{<FaIcons.FaWindowClose />}</button>
                         </div>
                         <EditableText />
                     </div>
