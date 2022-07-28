@@ -1,2 +1,2 @@
-# PlannerProject1
+# StudentToolsProject
 Website with a week planner and notes
