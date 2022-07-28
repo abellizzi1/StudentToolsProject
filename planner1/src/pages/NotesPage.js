@@ -21,19 +21,21 @@ export default function NotesPage() {
         localStorage.setItem('noteIdx', noteIdx);
         ReactDOM.render(
             React.createElement(Note, {noteIdx: noteIdx}),
-                document.getElementById('allAssignments')
+                document.getElementById('allNotes')
         );
     }
 
     return (
         <div>
             <div className = 'content'>
+                
                 <div id='allNotes'/>
 
                 <div className = 'notes'>
                     <div className = 'note-toolbar'>
                     </div>
-                    <p>fffffffff</p>
+                    
+
                 </div>
             </div>
             

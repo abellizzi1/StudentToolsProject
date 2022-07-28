@@ -40,7 +40,7 @@
   
   .sidebar-menu.active {
     left: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   
   .sidebar-text {
