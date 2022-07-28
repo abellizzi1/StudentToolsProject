@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './NotesPage.css';
 import Note from '../components/Note.js';
 
 export default function NotesPage() {
+
+    useEffect(() => {
+        ReactDOM.render(
+            React.createElement(Note, {noteIdx: noteIdx}), 
+            document.getElementById('allNotes')
+          );
+      }, []);
 
     var noteIdx;
     if (localStorage.getItem('noteIdx') != null)
