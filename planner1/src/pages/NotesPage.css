@@ -21,6 +21,15 @@
 	}
 }
 
+p {
+	font-size: 22px;
+	color: black;
+	z-index: 3;
+	text-align: left;
+	padding-left: 5px;
+	padding-top: 52px;
+}
+
 .notes {
     height: 350px;
     width: 350px;

@@ -32,8 +32,8 @@ export default function NotesPage() {
 
                 <div className = 'notes'>
                     <div className = 'note-toolbar'>
-
                     </div>
+                    <p>fffffffff</p>
                 </div>
             </div>
             
