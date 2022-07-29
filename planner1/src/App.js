@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar.js';
 import NotesPage from './pages/NotesPage.js';
 
 function App() {
-  localStorage.clear();
+  
   return (
     <>
       <Router>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './NotesPage.css';
 import Note from '../components/Note.js';
+import * as FaIcons from 'react-icons/fa';
 
 export default function NotesPage() {
 
@@ -33,10 +34,22 @@ export default function NotesPage() {
         );
     }
 
+    function removeAllNotes() {
+        noteIdx = 0;
+        localStorage.setItem('noteIdx', noteIdx);
+        localStorage.setItem('allNotes', null);
+        ReactDOM.render(
+            React.createElement(Note, {noteIdx: null}),
+                document.getElementById('allNotes')
+        );
+    }
+
     return (
         <div>
             <div className = 'content'>
                 <button onClick={addNote} className='addNoteButton'>Add Note</button>
+                <button onClick={removeAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
+                <button className='save-button'>{<FaIcons.FaSave />} Save</button>
                 <div id='allNotes'/>
             </div>
             

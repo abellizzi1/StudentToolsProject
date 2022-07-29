@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactHtmlParser from 'react-html-parser';
+import { AiOutlineReload } from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 
 class Note extends React.Component {
@@ -11,15 +12,31 @@ class Note extends React.Component {
             notes: []
         }
     }
-      
+
+    
+    deleteNote(idx) {
+      console.log(idx);
+      var notesArr= JSON.parse(localStorage.getItem('allNotes'));
+      var i = 0;
+      while (i < notesArr.length)
+      {
+        if (idx == notesArr[i])
+        {
+          notesArr.splice(i, 2);
+          break;
+        }
+        i += 2;
+      }
+      localStorage.setItem('allNotes', JSON.stringify(notesArr));
+      window.location.reload();
+    }
 
     render() {
         this.state.notes = [];
-        var notesArr = [];
+        var notesArr = JSON.parse(localStorage.getItem('allNotes'));
         
-        if (localStorage.getItem('allNotes') != null)
+        if (notesArr != null)
         {
-            var notesArr= JSON.parse(localStorage.getItem('allNotes'));
             var i = 0;
 
             while (i < notesArr.length)
@@ -33,8 +50,7 @@ class Note extends React.Component {
                 const tempRet = (
                     <div id={ReactHtmlParser(tempNoteIdx)} className = 'notes'>
                         <div className = 'note-toolbar'>
-                            <button className='close-button'>{<FaIcons.FaSave />}</button>
-                            <button className='close-button'>{<FaIcons.FaWindowClose />}</button>
+                            <button onClick={this.deleteNote.bind(this, tempNoteIdx)} className='close-button'>{<FaIcons.FaWindowClose />}</button>
                         </div>
                         <form>
                           <textarea className='inputNote' rows= "25" cols="100" id={ReactHtmlParser(tempInputIdx)} maxlength="1000" name={ReactHtmlParser(tempInputIdx)} placeholder="Type here to edit note"></textarea>
@@ -44,6 +60,10 @@ class Note extends React.Component {
                 this.state.notes.push(tempRet);
             }
         }
+        else
+        {
+          notesArr = [];
+        }
 
         if (this.props.noteIdx != null)
         {
@@ -52,8 +72,7 @@ class Note extends React.Component {
             const ret = (
                 <div id={ReactHtmlParser(noteIndex)} className = 'notes'>
                     <div className = 'note-toolbar'>
-                        <button className='close-button'>{<FaIcons.FaSave />}</button>
-                        <button className='close-button'>{<FaIcons.FaWindowClose />}</button>
+                        <button onClick={this.deleteNote.bind(this, noteIndex)} className='close-button'>{<FaIcons.FaWindowClose />}</button>
                     </div>
                     <form>
                       <textarea className='inputNote' rows= "25" cols="100" id={ReactHtmlParser(tempInputIdx)} maxlength="1000" name={ReactHtmlParser(tempInputIdx)} placeholder="Type here to edit note"></textarea>
