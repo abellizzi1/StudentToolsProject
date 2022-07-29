@@ -7,8 +7,9 @@ import Note from '../components/Note.js';
 export default function NotesPage() {
 
     useEffect(() => {
+        sessionStorage.setItem("currentPage", "Notes");
         ReactDOM.render(
-            React.createElement(Note, {noteIdx: noteIdx}), 
+            React.createElement(Note, {noteIdx: null}), 
             document.getElementById('allNotes')
           );
       }, []);

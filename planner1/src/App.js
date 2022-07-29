@@ -4,8 +4,7 @@ import Sidebar from './components/Sidebar.js';
 import NotesPage from './pages/NotesPage.js';
 
 function App() {
-  sessionStorage.setItem("currentPage", "Notes");
-
+  localStorage.clear();
   return (
     <>
       <Router>

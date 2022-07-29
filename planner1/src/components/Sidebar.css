@@ -38,6 +38,10 @@
   .close-button:active {
     font-size: 1.8rem;
   }
+
+  .close-button:hover {
+    color: rgb(212, 212, 212);
+  }
   
   .sidebar-menu {
     background-color: rgb(48, 48, 48);
