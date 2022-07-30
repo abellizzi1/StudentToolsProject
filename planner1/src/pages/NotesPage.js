@@ -1,43 +1,91 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import ReactDOM from 'react-dom';
 import './NotesPage.css';
+import { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
+import * as FaIcons from 'react-icons/fa';
 
-export default function NotesPage() {
+const NotesPage = ({ handleSetElement }) => {
 
-    var noteIdx;
-    if (localStorage.getItem('noteIdx') != null)
-    {
-        noteIdx = localStorage.getItem('noteIdx');
+    useEffect(() => {
+		handleSetElement("Notes");
+
+		const savedNotes = JSON.parse(
+			localStorage.getItem('allNotesData')
+		);
+		if (savedNotes) {
+			setNotes(savedNotes);
+		}
+		console.log(localStorage.getItem('allNotesData'));
+	}, []);
+
+	const [notes, setNotes] = useState([
+	]);
+
+    const addNote = () => {
+		const newNote = {
+			id: nanoid(),
+			text: ''
+		};
+		const newNotes = [...notes, newNote];
+		notes.push(newNote);
+		setNotes(newNotes);
+		localStorage.setItem('allNotesData', JSON.stringify(notes));
+	};
+
+    const changeNote = (id, text) => {
+        var i = 0;
+		const notesTemp = notes;
+		while (i < notesTemp.length)
+		{
+			if (notesTemp[i].id === id)
+			{
+				notesTemp[i].text = text;
+				setNotes(notesTemp);
+				break;
+			}
+			i++;
+		}
+		localStorage.setItem('allNotesData', JSON.stringify(notes));
     }
-    else
-    {
-        noteIdx = 0;
+
+    const deleteAllNotes = () => {
+        setNotes([]);
+		localStorage.setItem('allNotesData', null);
     }
 
-    function addNote() {
-        noteIdx++;
-        localStorage.setItem('noteIdx', noteIdx);
-        ReactDOM.render(
-            React.createElement(Note, {noteIdx: noteIdx}),
-                document.getElementById('allAssignments')
-        );
-    }
+    const deleteNote = (id) => {
+		var i = 0;
+		const notesTemp = notes;
+		while (i < notesTemp.length)
+		{
+			if (notesTemp[i].id === id)
+			{
+				notesTemp.splice(i, 1);
+				setNotes(notesTemp);
+				break;
+			}
+			i++;
+		}
+		localStorage.setItem('allNotesData', JSON.stringify(notes));
+		window.location.reload();
+	};
 
-    return (
-        <div>
-            <div className = 'content'>
-                <div id='allNotes'/>
-
-                <div className = 'notes'>
-                    <div className = 'note-toolbar'>
-                    </div>
-                    <p>fffffffff</p>
-                </div>
+    return(
+            <div className='content'>
+                <button onClick={addNote} className='addNoteButton'>Add Note</button>
+                <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
+				<div>
+					{notes.map((note) => (
+						<Note
+							id={note.id}
+							text={note.text}
+							handleDeleteNote={deleteNote}
+							handleChangeNote={changeNote}
+						/>
+					))}
+				</div>
             </div>
-            
-        </div>
-
     )
 }
+
+export default NotesPage;

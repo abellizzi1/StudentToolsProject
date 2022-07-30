@@ -18,11 +18,29 @@
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    transition: 0.1s;
+  }
+
+  .menu-bars:active {
+    font-size: 1.8rem;
   }
 
   .close-button {
     font-size: 2rem;
     background: none;
+    border: none;
+    stroke-width: '10';
+    cursor:pointer;
+    transition: 0.1s;
+    color: white;
+  }
+
+  .close-button:active {
+    font-size: 1.8rem;
+  }
+
+  .close-button:hover {
+    color: rgb(212, 212, 212);
   }
   
   .sidebar-menu {
@@ -40,7 +58,7 @@
   
   .sidebar-menu.active {
     left: 0;
-    transition: 1s;
+    transition: 0.5s;
   }
   
   .sidebar-text {

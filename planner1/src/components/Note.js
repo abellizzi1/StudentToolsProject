@@ -1,66 +1,40 @@
-import React from 'react'
-import ReactHtmlParser from 'react-html-parser';
+import * as FaIcons from 'react-icons/fa';
+import { useState } from 'react';
 
-class Note extends React.Component {
+const Note = ({ id, text, handleDeleteNote, handleChangeNote }) => {
+	
+    const [noteText, setNoteText] = useState(text);
 
-    constructor (props) {
-        super(props);
+    const handleChange = (event) => {
+        var trueValue = event.target.value;
+        setNoteText(trueValue);
+        handleChangeNote(id, trueValue);
 
-        this.state = {
-            notes: []
-        }
+        console.log(id);
+        console.log(noteText);
     }
-
-    render() {
-        this.state.notes = [];
-        var notesArr = [];
-        
-
-        if (localStorage.getItem('allNotes') != null)
-        {
-            notesArr = JSON.parse(localStorage.getItem('allNotes'));
-            var i = 0;
-            while (i < notesArr.length)
-            {
-                var tempNoteIdx = notesArr[i];
-                i++;
-                var tempNoteContent = notesArr[i];
-                i++;
-
-                const tempRet = (
-                    <div id={ReactHtmlParser(tempNoteIdx)} className = 'notes'>
-                        <div className = 'note-toolbar'>
-                        </div>
-                        <p>{ReactHtmlParser(tempNoteContent)}</p>
-                    </div>
-                );
-                this.state.notes.push(tempRet);
-            }
-        }
-
-        if (this.props.noteIdx != null)
-        {
-            var noteIndex = this.props.noteIdx;
-
-            const ret = (
-                <div id={ReactHtmlParser(noteIndex)} className = 'notes'>
-                    <div className = 'note-toolbar'>
-                    </div>
-                    <p></p>
-                </div>
-            );
-
-            this.state.notes.push(ret);
-            notesArr.push(noteIndex);
-            notesArr.push(" ");
-            localStorage.setItem('allNotes', JSON.stringify(notesArr));
-        }
-
-        return (
-            this.state.notes
-        )
-    }
-
-}
+    
+    
+    return (
+		<div className='notes'>
+			<textarea
+                id={id}
+                className='inputNote' 
+				rows='8'
+				cols='10'
+				placeholder='Type to add a note...'
+				value={noteText}
+				onChange={handleChange}
+			></textarea>
+			<div className='note-toolbar'>
+                <button 
+                onClick={() => handleDeleteNote(id)}
+                className='close-button'>
+                    {<FaIcons.FaWindowClose />}
+                </button>
+			</div>
+		</div>
+	);
+};
 
 export default Note;

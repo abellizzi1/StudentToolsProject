@@ -6,13 +6,13 @@ import { SidebarOptions } from './SidebarOptions';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
 
-function Sidebar() {
+const Sidebar = ({ handleGetElement }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   useEffect(() => {
-    document.getElementById('currPage').textContent = sessionStorage.getItem('currentPage');
+    handleGetElement(document.getElementById('currentPage'));
   }, []);
 
   return (
@@ -22,7 +22,7 @@ function Sidebar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <h1 id='currPage' className='h1'>Notes</h1>
+          <h1 id='currentPage' className='h1'></h1>
         </div>
         <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
           <ul className='sidebar-menu-items' onClick={showSidebar}>
