@@ -66,6 +66,7 @@
     margin-top: 10px;
 	margin-left: 30px;
     border-radius: 10px;
+	vertical-align: top;
 	transition-timing-function: ease-out;
 	transition: 0.2s;
 }
