@@ -11,35 +11,27 @@ export const SidebarOptions = [
     cName: 'sidebar-text'
   },
   {
+    title: 'Friends',
+    path: '/friends',
+    icon: <FaIcons.FaUserFriends />,
+    cName: 'sidebar-text'
+  },
+  {
     title: 'Notes',
     path: '/',
     icon: <FaIcons.FaStickyNote />,
     cName: 'sidebar-text'
+  },
+  {
+    title: 'Tasks',
+    path: '/tasks',
+    icon: <FaIcons.FaClipboard />,
+    cName: 'sidebar-text'
+  },
+  {
+    title: 'Group Tasks',
+    path: '/group-tasks',
+    icon: <FaIcons.FaClipboardList />,
+    cName: 'sidebar-text'
   }
-  /*,
-  
-  {
-    title: 'Products',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />,
-    cName: 'sidebar-text'
-  },
-  {
-    title: 'Team',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />,
-    cName: 'sidebar-text'
-  },
-  {
-    title: 'Messages',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: 'sidebar-text'
-  },
-  {
-    title: 'Support',
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'sidebar-text'
-  }*/
 ];
