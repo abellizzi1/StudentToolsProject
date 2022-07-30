@@ -6,9 +6,10 @@ const Note = ({ id, text, handleDeleteNote, handleChangeNote }) => {
     const [noteText, setNoteText] = useState(text);
 
     const handleChange = (event) => {
-        setNoteText(event.target.value);
-        handleChangeNote(id, noteText);
-        
+        var trueValue = event.target.value;
+        setNoteText(trueValue);
+        handleChangeNote(id, trueValue);
+
         console.log(id);
         console.log(noteText);
     }

@@ -21,8 +21,6 @@ export default function NotesPage() {
 		if (savedNotes) {
 			setNotes(savedNotes);
 		}
-
-		console.log(notes);
 	}, []);
 
     const addNote = () => {
@@ -71,11 +69,10 @@ export default function NotesPage() {
 		}
 		localStorage.setItem('allNotesData', JSON.stringify(notes));
 		window.location.reload();
-		console.log(id);
 	};
 
     return(
-        <div>
+        <div className='background'>
             <div className='content'>
                 <button onClick={addNote} className='addNoteButton'>Add Note</button>
                 <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
