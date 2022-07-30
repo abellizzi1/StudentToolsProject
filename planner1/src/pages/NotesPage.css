@@ -1,4 +1,4 @@
-.background {
+.content {
 	z-index: 1;
 	background: linear-gradient(-45deg, black, gray, black, gray);
 	background-size: 400% 400%;
@@ -7,10 +7,6 @@
 	animation: animate 60s ease infinite;
 	position:absolute;
 	overflow:auto;
-}
-
-.content {
-	position: relative;
 }
 
 @keyframes animate {

@@ -6,22 +6,20 @@ import * as FaIcons from 'react-icons/fa';
 
 export default function NotesPage() {
 
-    const [notes, setNotes] = useState([
-	{
-		id: nanoid(),
-		text: ''
-	}
-]);
-		
-
     useEffect(() => {
+		sessionStorage.setItem('currentPage', 'Notes');
+
 		const savedNotes = JSON.parse(
 			localStorage.getItem('allNotesData')
 		);
 		if (savedNotes) {
 			setNotes(savedNotes);
 		}
+		console.log(localStorage.getItem('allNotesData'));
 	}, []);
+
+	const [notes, setNotes] = useState([
+	]);
 
     const addNote = () => {
 		const newNote = {
@@ -29,6 +27,7 @@ export default function NotesPage() {
 			text: ''
 		};
 		const newNotes = [...notes, newNote];
+		notes.push(newNote);
 		setNotes(newNotes);
 		localStorage.setItem('allNotesData', JSON.stringify(notes));
 	};
@@ -72,7 +71,6 @@ export default function NotesPage() {
 	};
 
     return(
-        <div className='background'>
             <div className='content'>
                 <button onClick={addNote} className='addNoteButton'>Add Note</button>
                 <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
@@ -87,6 +85,5 @@ export default function NotesPage() {
 					))}
 				</div>
             </div>
-        </div>
     )
 }
