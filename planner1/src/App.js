@@ -21,13 +21,13 @@ function App() {
   return (
     <>
       <Router>
-        <Sidebar handleGetElement={getCurrentPageElement} />
+        <Sidebar handleGetCurrentPageElement={getCurrentPageElement} />
         <Routes>
-          <Route path = '/' exact element = {<NotesPage handleSetElement={setCurrentPageElement} />} />
-          <Route path = '/profile' exact element = {<ProfilePage handleSetElement={setCurrentPageElement} />} />
-          <Route path = '/friends' exact element = {<FriendsPage handleSetElement={setCurrentPageElement} />} />
-          <Route path = '/tasks' exact element = {<TasksPage handleSetElement={setCurrentPageElement} />} />
-          <Route path = '/group-tasks' exact element = {<GroupTasksPage handleSetElement={setCurrentPageElement} />} />
+          <Route path = '/' exact element = {<NotesPage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/profile' exact element = {<ProfilePage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/friends' exact element = {<FriendsPage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/tasks' exact element = {<TasksPage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/group-tasks' exact element = {<GroupTasksPage handleSetCurrentPage={setCurrentPageElement} />} />
         </Routes>
       </Router>
     </>

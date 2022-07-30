@@ -6,13 +6,13 @@ import { SidebarOptions } from './SidebarOptions';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
 
-const Sidebar = ({ handleGetElement }) => {
+const Sidebar = ({ handleGetCurrentPageElement }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   useEffect(() => {
-    handleGetElement(document.getElementById('currentPage'));
+    handleGetCurrentPageElement(document.getElementById('currentPage'));
   }, []);
 
   return (
