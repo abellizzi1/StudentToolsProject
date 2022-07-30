@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-export default function NotesPage() {
+const NotesPage = ({ handleSetElement }) => {
 
     useEffect(() => {
-		sessionStorage.setItem('currentPage', 'Notes');
+		handleSetElement("Notes");
 
 		const savedNotes = JSON.parse(
 			localStorage.getItem('allNotesData')
@@ -87,3 +87,5 @@ export default function NotesPage() {
             </div>
     )
 }
+
+export default NotesPage;
