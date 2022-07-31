@@ -72,7 +72,7 @@ const NotesPage = ({ handleSetCurrentPage }) => {
 
     return(
             <div className='content'>
-                <button onClick={addNote} className='addNoteButton'>Add Note</button>
+                <button onClick={addNote} className='addNoteButton'>{<FaIcons.FaPlusCircle />} Add Note</button>
                 <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
 				<div>
 					{notes.map((note) => (

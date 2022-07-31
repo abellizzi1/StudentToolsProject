@@ -9,9 +9,6 @@ const Note = ({ id, text, handleDeleteNote, handleChangeNote }) => {
         var trueValue = event.target.value;
         setNoteText(trueValue);
         handleChangeNote(id, trueValue);
-
-        console.log(id);
-        console.log(noteText);
     }
     
     

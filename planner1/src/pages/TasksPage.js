@@ -1,7 +1,7 @@
-import './NotesPage.css';
+import './TasksPage.css';
 import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
 const TasksPage = ({ handleSetCurrentPage }) => {
@@ -13,7 +13,13 @@ const TasksPage = ({ handleSetCurrentPage }) => {
 
     return(
             <div className='content'>
-                
+                <Link to={"/tasks/create-task"}>
+                    <button 
+                    onClick={addNote} 
+                    className='addTaskButton'>
+                    {<FaIcons.FaPen />} Create Task
+                    </button>
+                </Link>
             </div>
     )
 }
