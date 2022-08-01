@@ -50,11 +50,12 @@
 }
 
 .task {
-    height: 350px;
-    width: 350px;
+    height: 600px;
+    width: 500px;
     margin-top: 15px;
 	margin-bottom: 15px;
-    background-color: yellow;
+	margin-left: 20px;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
 	position: relative;
 	z-index: 1;
@@ -62,30 +63,54 @@
 	transition: 0.4s;
 }
 
+.task:hover {
+	height:605px;
+	width:505px;
+}
+
+.task:hover > .task-toolbar { width: 505px; }
+
 .taskTitle {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	
+    font-family:"Palantino";
+	padding-top: 5px;
+	padding-left: 5px;
 	margin-left:5px;
-	width: 332px;
-    color: black;
+	width: 480px;
+    color: rgb(0, 0, 0);
     background: transparent;
 	border-radius: 10px;
     outline: none;
-	font-size:17px;
+	font-size:35px;
 	border:transparent;
 	resize:none;
+	overflow-wrap:break-word;
 }
 
 .taskText {
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	margin-left:5px;
-	width: 332px;
-	height: 275px;
+	padding-left: 5px;
+	width: 480px;
     color: black;
     background: transparent;
 	border-radius: 10px;
     outline: none;
-	font-size:17px;
+	font-size:20px;
 	border:transparent;
 	resize:none;
+	overflow-wrap:break-word;
 }
+
+.task-toolbar{
+	height: 50px;
+	width: 500px;
+	display: flex;
+	justify-content: flex-start;
+	align-content: center;
+	background-color: rgb(6, 155, 175);
+	border-radius: 0px 0px 10px 10px;
+	position: absolute;
+	bottom: 0;
+	transition-timing-function: ease-out;
+	transition: 0.4s;
+  }
