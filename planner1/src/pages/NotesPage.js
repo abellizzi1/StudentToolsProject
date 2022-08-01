@@ -55,13 +55,12 @@ const NotesPage = ({ handleSetCurrentPage }) => {
 
     const deleteNote = (id) => {
 		var i = 0;
-		const notesTemp = notes;
-		while (i < notesTemp.length)
+		while (i < notes.length)
 		{
-			if (notesTemp[i].id === id)
+			if (notes[i].id === id)
 			{
-				notesTemp.splice(i, 1);
-				setNotes(notesTemp);
+				notes.splice(i, 1);
+				setNotes(notes);
 				break;
 			}
 			i++;

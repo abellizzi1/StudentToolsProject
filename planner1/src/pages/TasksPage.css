@@ -54,7 +54,7 @@
     width: 500px;
     margin-top: 15px;
 	margin-bottom: 15px;
-	margin-left: 20px;
+	margin-left: 30px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
 	position: relative;
@@ -63,15 +63,10 @@
 	transition: 0.4s;
 }
 
-.task:hover {
-	height:605px;
-	width:505px;
-}
-
-.task:hover > .task-toolbar { width: 505px; }
+.task:hover > .task-toolbar { background-color: rgb(6, 121, 136); }
 
 .taskTitle {
-    font-family:"Palantino";
+    font-family:Arial, Helvetica, sans-serif;
 	padding-top: 5px;
 	padding-left: 5px;
 	margin-left:5px;
@@ -80,7 +75,7 @@
     background: transparent;
 	border-radius: 10px;
     outline: none;
-	font-size:35px;
+	font-size:32px;
 	border:transparent;
 	resize:none;
 	overflow-wrap:break-word;

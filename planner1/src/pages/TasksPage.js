@@ -8,7 +8,39 @@ const TasksPage = ({ handleSetCurrentPage }) => {
 
     useEffect(() => {
 		handleSetCurrentPage("Tasks");
+
+        const savedTasks = JSON.parse(
+            localStorage.getItem('allTasksData')
+        );
+        if (savedTasks) {
+            setTasks(savedTasks);
+        }
+        console.log(localStorage.getItem('allTasksData'));
 	}, []);
+
+    const [tasks, setTasks] = useState([
+    ]);
+
+    const deleteAllTasks = () => {
+        setTasks([]);
+        localStorage.setItem('allTasksData', null);
+    }
+
+    const deleteTask = (id) => {
+        var i = 0;
+        while (i < tasks.length)
+        {
+            if (tasks[i].id === id)
+            {
+                tasks.splice(i, 1);
+                setTasks(tasks);
+                break;
+            }
+            i++;
+        }
+        localStorage.setItem('allTasksData', JSON.stringify(tasks));
+        window.location.reload();
+    }
     
 
     return(
