@@ -1,7 +1,6 @@
 import './TasksPage.css';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
 const CreateTaskPage = ({ handleSetCurrentPage }) => {
@@ -35,7 +34,17 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
 
     return(
             <div className='content'>
-                
+                <div className='createTaskContent'>
+                    <div className='createTaskBox'>
+                        <textarea
+                            id='task-title'
+                            className='inputTaskTitle' 
+                            rows='8'
+                            cols='10'
+                            placeholder='Type to add a title...'
+                        ></textarea>
+                    </div>
+                </div>
             </div>
     )
 }
