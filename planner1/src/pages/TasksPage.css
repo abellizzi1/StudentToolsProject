@@ -46,7 +46,8 @@
 }
 
 .addTaskButton:active {
-	padding: 2px 17px;
+	padding: 3px 18px;
+	margin-top:12px;
 }
 
 .task {
@@ -121,15 +122,86 @@
 	height:750px;
 	background-color: white;
 	margin-top:50px;
-	border-radius: 10px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 30px 30px rgba(0,0,0,0.24);
   }
 
   .inputTaskTitle {
-	background-color: blue;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: rgb(6, 155, 175);
 	resize: none;
 	width:500px;
 	height:60px;
 	border-radius:10px;
-	text-align: center;
-	margin-left:75px;
+	margin-left:70px;
+	margin-top:20px;
+	font-size:22px;
+	color:white;
+	overflow-wrap:break-word;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+	padding-top:10px;
+	padding-left:10px;
   }
+
+  .inputTaskTitle::-webkit-input-placeholder {
+	color:rgb(235, 231, 231);
+  }
+
+  .inputTaskTitle:hover {
+	background-color: rgb(6, 121, 136);
+  }
+
+  .inputTaskText {
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	background-color: rgb(6, 155, 175);
+	resize: none;
+	width:500px;
+	height:300px;
+	border-radius:10px;
+	margin-left:70px;
+	margin-top:15px;
+	font-size:20px;
+	padding-top:10px;
+	padding-left:10px;
+	color:white;
+	overflow-wrap:break-word;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+  }
+
+  .inputTaskText::-webkit-input-placeholder {
+	color:rgb(235, 231, 231);
+  }
+
+  .inputTaskText:hover {
+	background-color: rgb(6, 121, 136);
+  }
+
+  .trueCreateTaskButton {
+	margin-top:250px;
+	background-color: rgb(6, 155, 175);
+	border: none;
+	color: white;
+	padding: 9px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+	margin-left: 235px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+  }
+
+.trueCreateTaskButton:hover {
+	background-color: rgb(6, 121, 136);
+}
+
+.trueCreateTaskButton:active {
+	padding: 7px 22px;
+	margin-top: 252px;
+	margin-left:237px;
+}
