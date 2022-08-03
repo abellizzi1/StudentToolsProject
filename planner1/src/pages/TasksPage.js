@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
+import Task from '../components/Task';
 
 const TasksPage = ({ handleSetCurrentPage }) => {
-
+    
     useEffect(() => {
 		handleSetCurrentPage("Tasks");
 
@@ -51,20 +52,18 @@ const TasksPage = ({ handleSetCurrentPage }) => {
                     {<FaIcons.FaPen />} Create Task
                     </button>
                 </Link>
+                <button onClick={deleteAllTasks} className='addTaskButton'>{<FaIcons.FaTrash />} Delete All</button>
 
                 <div>
-                    <div className='task'>
-                        <h1 className='taskTitle'>
-                            Assignment 1000: Joe mama on deez nuts
-                        </h1>
-                        <p className='taskText'>
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        </p>
-
-                        <div className='task-toolbar'>
-                            <p>Task data goes here</p>
-                        </div>
-                    </div>
+                    {tasks.map((task) => (
+						<Task
+							id={task.id}
+                            titleText={task.title}
+							bodyText={task.text}
+                            date={task.date}
+							handleDeleteTask={deleteTask}
+						/>
+					))}
                 </div>
             </div>
     )

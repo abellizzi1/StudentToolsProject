@@ -12,13 +12,13 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
 
     const addTask = () => {
         const newTask = {
-            //THESE VALUES WILL BE SET IN THE FIELDS ON THIS PAGE
             id: nanoid(),
             title: document.getElementById('task-title').value,
-            text: document.getElementById('task-text').value
+            text: document.getElementById('task-text').value,
+            date: document.getElementById('taskDate').value
         };
         const savedTasks = JSON.parse(
-			localStorage.getItem('allNotesData')
+			localStorage.getItem('allTasksData')
 		);
 
 		if (savedTasks) {
@@ -37,6 +37,7 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
             <div className='content'>
                 <div className='createTaskContent'>
                     <div className='createTaskBox'>
+                        <h1 className='taskInformationHeader'>Task Information</h1>
                         <textarea
                             id='task-title'
                             className='inputTaskTitle' 
@@ -51,6 +52,10 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
                             cols='10'
                             placeholder='Type to add text...'
                         ></textarea>
+                        <form>
+                            <label className='deadlineLabel' for='taskDate'>Deadline:</label>
+                            <input className='taskDateInput' type='date' id='taskDate' name='taskDate' />
+                        </form>
                         <Link to={"/tasks"}>
                             <button 
                             onClick={addTask}
