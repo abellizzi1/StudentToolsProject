@@ -11,11 +11,16 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
 	}, []);
 
     const addTask = () => {
+        var tempDate = document.getElementById('taskDate').value;
+        if (tempDate.length === 0)
+        {
+            tempDate = "None";
+        }
         const newTask = {
             id: nanoid(),
             title: document.getElementById('task-title').value,
             text: document.getElementById('task-text').value,
-            date: document.getElementById('taskDate').value
+            date: tempDate
         };
         const savedTasks = JSON.parse(
 			localStorage.getItem('allTasksData')
@@ -50,7 +55,7 @@ const CreateTaskPage = ({ handleSetCurrentPage }) => {
                             className='inputTaskText' 
                             rows='8'
                             cols='10'
-                            placeholder='Type to add text...'
+                            placeholder='Type to add a description...'
                         ></textarea>
                         <form>
                             <label className='deadlineLabel' for='taskDate'>Deadline:</label>

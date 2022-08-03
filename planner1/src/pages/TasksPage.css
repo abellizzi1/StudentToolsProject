@@ -1,6 +1,6 @@
 .content {
 	z-index: 1;
-	background: linear-gradient(-45deg, black, gray, black, gray);
+	background: linear-gradient(-45deg, black, rgb(7, 58, 65), black, rgb(7, 58, 65));
 	background-size: 400% 400%;
 	width: 100%;
 	height: 100%;

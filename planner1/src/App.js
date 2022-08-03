@@ -7,6 +7,7 @@ import FriendsPage from './pages/FriendsPage.js';
 import TasksPage from './pages/TasksPage.js';
 import GroupTasksPage from './pages/GroupTasksPage';
 import CreateTaskPage from './pages/CreateTaskPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   
@@ -30,6 +31,7 @@ function App() {
           <Route path = '/tasks' exact element = {<TasksPage handleSetCurrentPage={setCurrentPageElement} />} />
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage handleSetCurrentPage={setCurrentPageElement} />} />
           <Route path = '/group-tasks' exact element = {<GroupTasksPage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/register' exact element = {<RegisterPage handleSetCurrentPage={setCurrentPageElement} />} />
         </Routes>
       </Router>
     </>
