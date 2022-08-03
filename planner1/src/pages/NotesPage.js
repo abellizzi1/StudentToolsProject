@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-const NotesPage = ({ handleSetElement }) => {
+const NotesPage = ({ handleSetCurrentPage }) => {
 
     useEffect(() => {
-		handleSetElement("Notes");
+		handleSetCurrentPage("Notes");
 
 		const savedNotes = JSON.parse(
 			localStorage.getItem('allNotesData')
@@ -55,13 +55,12 @@ const NotesPage = ({ handleSetElement }) => {
 
     const deleteNote = (id) => {
 		var i = 0;
-		const notesTemp = notes;
-		while (i < notesTemp.length)
+		while (i < notes.length)
 		{
-			if (notesTemp[i].id === id)
+			if (notes[i].id === id)
 			{
-				notesTemp.splice(i, 1);
-				setNotes(notesTemp);
+				notes.splice(i, 1);
+				setNotes(notes);
 				break;
 			}
 			i++;
@@ -72,7 +71,7 @@ const NotesPage = ({ handleSetElement }) => {
 
     return(
             <div className='content'>
-                <button onClick={addNote} className='addNoteButton'>Add Note</button>
+                <button onClick={addNote} className='addNoteButton'>{<FaIcons.FaPlusCircle />} Add Note</button>
                 <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
 				<div>
 					{notes.map((note) => (

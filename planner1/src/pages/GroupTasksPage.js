@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-const GroupTasksPage = ({ handleSetElement }) => {
+const GroupTasksPage = ({ handleSetCurrentPage }) => {
 
     useEffect(() => {
-		handleSetElement("Group Tasks");
+		handleSetCurrentPage("Group Tasks");
 	}, []);
     
 

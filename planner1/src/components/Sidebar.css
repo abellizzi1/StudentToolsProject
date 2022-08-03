@@ -23,6 +23,7 @@
 
   .menu-bars:active {
     font-size: 1.8rem;
+    margin-left:2.2rem;
   }
 
   .close-button {
@@ -37,6 +38,7 @@
 
   .close-button:active {
     font-size: 1.8rem;
+    margin-left:0.2rem;
   }
 
   .close-button:hover {
@@ -78,7 +80,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 0px 16px;
     border-radius: 4px;
     transition-timing-function: ease-out;
 	transition: 0.3s;
@@ -91,6 +93,7 @@
   .sidebar-text a:active {
     width: 85%;
     height: 90%;
+    margin-top:2px;
   }
   
   .sidebar-menu-items {
