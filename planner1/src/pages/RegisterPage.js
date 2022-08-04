@@ -18,11 +18,6 @@ const RegisterPage = ({ handleSetCurrentPage }) => {
         var tempEmail = document.getElementById('emailInput').value
         var tempPassword = document.getElementById('passwordInput').value;
 
-        console.log(tempFirstName);
-        console.log(tempLastName);
-        console.log(tempEmail);
-        console.log(tempPassword);
-
         const registered = {
             firstName:tempFirstName,
             lastName:tempLastName,
@@ -30,7 +25,7 @@ const RegisterPage = ({ handleSetCurrentPage }) => {
             password:tempPassword
         }
 
-        axios.post('http://localhost:4000/app/signup', registered)
+        axios.post('http://localhost:4000/app/users', registered)
             .then(response => console.log(response.data));
 
         window.location.reload();

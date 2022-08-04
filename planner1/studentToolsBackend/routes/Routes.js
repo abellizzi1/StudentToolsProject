@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const signUpTemplateCopy = require('../models/SignUpModels');
 
-router.post('/signup', (request, response) =>{
+router.post('/users', (request, response) =>{
     const signedUpUser = new signUpTemplateCopy({
         firstName:request.body.firstName,
         lastName:request.body.lastName,
