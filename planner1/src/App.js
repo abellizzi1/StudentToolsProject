@@ -8,6 +8,7 @@ import TasksPage from './pages/TasksPage.js';
 import GroupTasksPage from './pages/GroupTasksPage';
 import CreateTaskPage from './pages/CreateTaskPage';
 import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage handleSetCurrentPage={setCurrentPageElement} />} />
           <Route path = '/group-tasks' exact element = {<GroupTasksPage handleSetCurrentPage={setCurrentPageElement} />} />
           <Route path = '/register' exact element = {<RegisterPage handleSetCurrentPage={setCurrentPageElement} />} />
+          <Route path = '/login' exact element = {<LoginPage handleSetCurrentPage={setCurrentPageElement} />} />
         </Routes>
       </Router>
     </>

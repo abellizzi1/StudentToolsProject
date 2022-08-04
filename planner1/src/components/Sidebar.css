@@ -67,9 +67,9 @@
     display: flex;
     justify-content: start;
     align-items: left;
-    padding: 8px 0px 8px 0px;
     list-style: none;
     height: 60px;
+    margin-bottom:15px;
   }
   
   .sidebar-text a {
@@ -88,6 +88,7 @@
   
   .sidebar-text a:hover {
     background-color: #1a83ff;
+    color:#f5f5f5;
   }
 
   .sidebar-text a:active {

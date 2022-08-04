@@ -6,29 +6,37 @@ import * as FaIcons from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
-const RegisterPage = ({ handleSetCurrentPage }) => {
+const LoginPage = ({ handleSetCurrentPage }) => {
+
+    const [repo, setRepo] = useState([]);
+
+    const getRepo = () => {
+    axios.get('http://localhost:4000/app/users/get')
+        .then((response) => {
+            const myRepo = response.data;
+            setRepo(myRepo);
+        });
+    }
 
     useEffect(() => {
-		handleSetCurrentPage("Register");
+		handleSetCurrentPage("Login");
+        getRepo();
 	}, []);
 
     const submitData = () => {
-        var tempFirstName = document.getElementById('firstNameInput').value;
-        var tempLastName = document.getElementById('lastNameInput').value;
         var tempEmail = document.getElementById('emailInput').value
         var tempPassword = document.getElementById('passwordInput').value;
+        var message = document.getElementById('msg');
 
-        const registered = {
-            firstName:tempFirstName,
-            lastName:tempLastName,
-            email:tempEmail,
-            password:tempPassword
+        var acc = repo.filter((user) => user.email === tempEmail);
+        if (acc.length > 0 && acc[0].password === tempPassword)
+        {
+            message.textContent = 'Success';
         }
-
-        axios.post('http://localhost:4000/app/users/create', registered)
-            .then(response => console.log(response.data));
-
-        window.location.reload();
+        else
+        {
+            message.textContent = 'Email or password invalid';
+        }
     }
 
     return(
@@ -36,19 +44,14 @@ const RegisterPage = ({ handleSetCurrentPage }) => {
                 <div className='registerContent'>
                     <div className='registerBox'>
                         <form>
-                            <label className='registerLabels' for='firstNameInput'>First Name:</label>
-                            <input className='firstNameInput' type='text' id='firstNameInput' name='firstNameInput' />
-                            <br></br>
-                            <label className='registerLabels' for='lastNameInput'>Last Name:</label>
-                            <input className='lastNameInput' type='text' id='lastNameInput' name='lastNameInput' />
-                            <br></br>
                             <label className='registerLabels' for='emailInput'>Email:</label>
                             <input className='emailInput' type='text' id='emailInput' name='emailInput' />
                             <br></br>
                             <label className='registerLabels' for='passwordInput'>Password:</label>
                             <input className='passwordInput' type='password' id='passwordInput' name='passwordInput' />
                         </form>
-                        <button className='registerButton' onClick={submitData} id='submitButton'>Register</button>
+                        <button className='registerButton' onClick={submitData} id='loginButton'>Login</button>
+                        <h1 id='msg'></h1>
                     </div>
                 </div>
                 
@@ -56,4 +59,4 @@ const RegisterPage = ({ handleSetCurrentPage }) => {
     )
 }
 
-export default RegisterPage;
+export default LoginPage;

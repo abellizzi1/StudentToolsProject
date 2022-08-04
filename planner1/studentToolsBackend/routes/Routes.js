@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const signUpTemplateCopy = require('../models/SignUpModels');
 
-router.post('/users', (request, response) =>{
+router.post('/users/create', (request, response) =>{
     const signedUpUser = new signUpTemplateCopy({
         firstName:request.body.firstName,
         lastName:request.body.lastName,
@@ -16,6 +16,11 @@ router.post('/users', (request, response) =>{
     .catch(error =>{
         response.json(error)
     })
+})
+
+router.route('/users/get').get((request, response) =>{
+    signUpTemplateCopy.find()
+        .then(foundUsers => response.json(foundUsers))
 })
 
 module.exports = router;
