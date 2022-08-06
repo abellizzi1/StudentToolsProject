@@ -7,8 +7,6 @@ import * as FaIcons from 'react-icons/fa';
 const NotesPage = ({ handleSetCurrentPage }) => {
 	
     useEffect(() => {
-		handleSetCurrentPage("Notes");
-
 		const savedNotes = JSON.parse(
 			localStorage.getItem('allNotesData')
 		);

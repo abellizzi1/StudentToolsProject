@@ -6,10 +6,8 @@ import * as FaIcons from 'react-icons/fa';
 import Task from '../components/Task';
 
 const TasksPage = ({ handleSetCurrentPage }) => {
-    
-    useEffect(() => {
-		handleSetCurrentPage("Tasks");
 
+    useEffect(() => {
         const savedTasks = JSON.parse(
             localStorage.getItem('allTasksData')
         );

@@ -6,10 +6,6 @@ import * as FaIcons from 'react-icons/fa';
 
 const GroupTasksPage = ({ handleSetCurrentPage }) => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Group Tasks");
-	}, []);
-    
 
     return(
             <div className='content'>

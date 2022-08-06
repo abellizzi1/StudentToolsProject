@@ -6,11 +6,6 @@ import * as FaIcons from 'react-icons/fa';
 
 const FriendsPage = ({ handleSetCurrentPage }) => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Friends");
-	}, []);
-    
-
     return(
             <div className='content'>
                 

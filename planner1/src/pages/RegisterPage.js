@@ -11,10 +11,6 @@ const RegisterPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-		handleSetCurrentPage("Register");
-	}, []);
-
     const submitData = () => {
         var tempFirstName = document.getElementById('firstNameInput').value;
         var tempLastName = document.getElementById('lastNameInput').value;

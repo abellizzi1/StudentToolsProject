@@ -6,10 +6,6 @@ import {Link} from "react-router-dom";
 
 const CreateTaskPage = ({ handleSetCurrentPage }) => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Create Task");
-	}, []);
-
     const addTask = () => {
         var tempDate = document.getElementById('taskDate').value;
         if (tempDate.length === 0)

@@ -21,7 +21,6 @@ const LoginPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
     }
 
     useEffect(() => {
-		handleSetCurrentPage("Login");
         getRepo();
 	}, []);
 

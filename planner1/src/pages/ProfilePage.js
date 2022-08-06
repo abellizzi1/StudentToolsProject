@@ -6,10 +6,6 @@ import * as FaIcons from 'react-icons/fa';
 
 const ProfilePage = ({ handleSetCurrentPage }) => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Profile");
-	}, []);
-    
 
     return(
             <div className='content'>

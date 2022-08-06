@@ -13,16 +13,7 @@ import LoginPage from './pages/LoginPage';
 
 function App() {
   
-  var sidebarCurrPageElement = null;
   const [loggedIn, setLoggedIn] = useState(false);
-
-  const getCurrentPageElement = (el) => {
-    sidebarCurrPageElement = el;
-  }
-
-  const setCurrentPageElement = (text) => {
-    sidebarCurrPageElement.textContent = text;
-  }
 
   const setIsLoggedIn = (b) => {
     setLoggedIn(b);
@@ -40,16 +31,16 @@ function App() {
   return (
     <>
       <Router>
-        <Sidebar handleGetCurrentPageElement={getCurrentPageElement} isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
+        <Sidebar isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route path = '/' exact element = {<NotesPage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/profile' exact element = {<ProfilePage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/friends' exact element = {<FriendsPage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/tasks' exact element = {<TasksPage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/tasks/create-task' exact element = {<CreateTaskPage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/group-tasks' exact element = {<GroupTasksPage handleSetCurrentPage={setCurrentPageElement} />} />
-          <Route path = '/register' exact element = {<RegisterPage handleSetCurrentPage={setCurrentPageElement} handleSetLoggedIn={setIsLoggedIn} />} />
-          <Route path = '/login' exact element = {<LoginPage handleSetCurrentPage={setCurrentPageElement} handleSetLoggedIn={setIsLoggedIn} />} />
+          <Route path = '/' exact element = {<NotesPage />} />
+          <Route path = '/profile' exact element = {<ProfilePage />} />
+          <Route path = '/friends' exact element = {<FriendsPage />} />
+          <Route path = '/tasks' exact element = {<TasksPage />} />
+          <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />
+          <Route path = '/group-tasks' exact element = {<GroupTasksPage />} />
+          <Route path = '/register' exact element = {<RegisterPage handleSetLoggedIn={setIsLoggedIn} />} />
+          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />
         </Routes>
       </Router>
     </>
