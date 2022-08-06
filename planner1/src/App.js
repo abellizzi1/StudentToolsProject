@@ -10,6 +10,7 @@ import GroupTasksPage from './pages/GroupTasksPage';
 import CreateTaskPage from './pages/CreateTaskPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import AddFriendPage from './pages/AddFriendPage';
 
 function App() {
   
@@ -36,11 +37,12 @@ function App() {
           <Route path = '/' exact element = {<NotesPage />} />
           <Route path = '/profile' exact element = {<ProfilePage />} />
           <Route path = '/friends' exact element = {<FriendsPage />} />
+          <Route path = '/friends/add-friend' exact element = {<AddFriendPage />} />
           <Route path = '/tasks' exact element = {<TasksPage />} />
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />
           <Route path = '/group-tasks' exact element = {<GroupTasksPage />} />
           <Route path = '/register' exact element = {<RegisterPage handleSetLoggedIn={setIsLoggedIn} />} />
-          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />
+          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />'
         </Routes>
       </Router>
     </>

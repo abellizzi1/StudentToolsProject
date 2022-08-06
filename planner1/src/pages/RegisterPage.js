@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
-const RegisterPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
+const RegisterPage = ({ handleSetLoggedIn }) => {
 
     const navigate = useNavigate();
 

@@ -1,15 +1,26 @@
-import './NotesPage.css';
+import './FriendsPage.css';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
+import {Link} from "react-router-dom";
 
-const FriendsPage = ({ handleSetCurrentPage }) => {
+const FriendsPage = () => {
 
     return(
-            <div className='content'>
-                
+        <div className='content'>
+            <Link to={"/friends/add-friend"}>
+                <button 
+                    className='addTaskButton'>
+                    {<FaIcons.FaUserPlus />} Add Friend
+                </button>
+            </Link>
+
+            <div className='friendBox'>
+
             </div>
+            
+        </div>
     )
 }
 

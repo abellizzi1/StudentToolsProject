@@ -1,17 +1,16 @@
-import './NotesPage.css';
+import './FriendsPage.css';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
+import {Link} from "react-router-dom";
 
-const ProfilePage = () => {
-
+const AddFriendPage = () => {
 
     return(
-            <div className='content'>
-                
-            </div>
+        <div className='content'>
+        </div>
     )
 }
 
-export default ProfilePage;
+export default AddFriendPage;

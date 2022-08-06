@@ -7,7 +7,7 @@ import * as FaIcons from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
-const LoginPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
+const LoginPage = ({ handleSetLoggedIn }) => {
     
     const [repo, setRepo] = useState([]);
     const navigate = useNavigate();

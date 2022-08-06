@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
-const CreateTaskPage = ({ handleSetCurrentPage }) => {
+const CreateTaskPage = () => {
 
     const addTask = () => {
         var tempDate = document.getElementById('taskDate').value;

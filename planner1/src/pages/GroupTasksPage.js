@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-const GroupTasksPage = ({ handleSetCurrentPage }) => {
+const GroupTasksPage = () => {
 
 
     return(

@@ -24,6 +24,9 @@ const Sidebar = ({ isLoggedIn, handleSetLoggedIn }) => {
       case '/friends':
         currPageElement.textContent = 'Friends';
         break;
+      case '/friends/add-friend':
+        currPageElement.textContent = 'Add Friend';
+        break;
       case '/tasks':
         currPageElement.textContent = 'Tasks';
         break;
