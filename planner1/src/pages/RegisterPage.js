@@ -9,7 +9,21 @@ import axios from 'axios'
 
 const RegisterPage = ({ handleSetLoggedIn }) => {
 
+    const [repo, setRepo] = useState([]);
+
     const navigate = useNavigate();
+
+    const getRepo = () => {
+        axios.get('http://localhost:4000/app/users/get')
+            .then((response) => {
+                const myRepo = response.data;
+                setRepo(myRepo);
+            });
+        }
+    
+        useEffect(() => {
+            getRepo();
+        }, []);
 
     const submitData = () => {
         var tempFirstName = document.getElementById('firstNameInput').value;
@@ -18,6 +32,7 @@ const RegisterPage = ({ handleSetLoggedIn }) => {
         var tempPassword = document.getElementById('passwordInput').value;
         var message = document.getElementById('msg');
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var existingAcc = repo.filter((user) => user.email === tempEmail);
 
         if (tempFirstName.length === 0)
         {
@@ -30,6 +45,10 @@ const RegisterPage = ({ handleSetLoggedIn }) => {
         else if (!tempEmail.match(mailformat))
         {
             message.textContent = 'Enter a valid email.';
+        }
+        else if (existingAcc.length > 0)
+        {
+            message.textContent = 'That email is taken.'
         }
         else if (tempPassword.length < 8)
         {

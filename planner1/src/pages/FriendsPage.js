@@ -17,7 +17,12 @@ const FriendsPage = () => {
             </Link>
 
             <div className='friendBox'>
-
+                <h3 id='friendName' className='friendBoxInfo'>Name:</h3>
+                <h3 id='friendEmail' className='friendBoxInfo'>Email:</h3>
+                <Link to={"/friends/messages"}>
+                    <button className='sendMessageButton'>Send Message</button>
+                </Link>
+                <button className='friendRemoveButton'>Remove</button>
             </div>
             
         </div>
