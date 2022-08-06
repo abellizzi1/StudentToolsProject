@@ -5,7 +5,7 @@ import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
 const NotesPage = ({ handleSetCurrentPage }) => {
-
+	
     useEffect(() => {
 		handleSetCurrentPage("Notes");
 

@@ -3,7 +3,7 @@
 	background: linear-gradient(-45deg, black, rgb(7, 58, 65), black, rgb(7, 58, 65));
 	background-size: 400% 400%;
 	width: 100%;
-	height: 100%;
+	height: 100;
 	animation: animate 60s ease infinite;
 	position:absolute;
 	overflow:auto;
@@ -135,10 +135,11 @@
 
   .createTaskBox {
 	width:650px;
-	height:750px;
+	height:700px;
 	background-color: white;
 	margin-top:50px;
 	border-radius: 20px;
+	margin-bottom:50px;
 	box-shadow: 0px 0px 30px 30px rgba(0,0,0,0.24);
   }
 

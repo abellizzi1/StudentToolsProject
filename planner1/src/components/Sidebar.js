@@ -6,7 +6,7 @@ import { SidebarOptions } from './SidebarOptions';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
 
-const Sidebar = ({ handleGetCurrentPageElement, isLoggedIn }) => {
+const Sidebar = ({ handleGetCurrentPageElement, isLoggedIn, handleSetLoggedIn }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -24,6 +24,7 @@ const Sidebar = ({ handleGetCurrentPageElement, isLoggedIn }) => {
                 <FaIcons.FaBars onClick={showSidebar} />
               </Link>
               <h1 id='currentPage' className='sidebarHeader'></h1>
+              <button onClick={() => { handleSetLoggedIn(false); window.location.reload(); }}className='logoutButton'>Logout</button>
             </div>
             <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>
               <ul className='sidebar-menu-items' onClick={showSidebar}>

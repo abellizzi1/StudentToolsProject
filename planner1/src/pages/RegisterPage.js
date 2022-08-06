@@ -53,6 +53,7 @@ const RegisterPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
     
             navigate('/');
             handleSetLoggedIn(true);
+            window.location.reload();
         }
     }
 

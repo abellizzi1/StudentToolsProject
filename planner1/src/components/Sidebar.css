@@ -141,3 +141,31 @@
   .loginRegButton:active {
     padding: 2px 17px;
   }
+
+  .logoutButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      position:absolute;
+      font-size: 25px;
+      cursor:pointer;
+      right: 10px;
+      margin-top:-5px;
+      border-radius: 10px;
+    vertical-align: top;
+    transition-timing-function: ease-out;
+    transition: 0.2s;
+  }
+  
+  .logoutButton:hover {
+    background-color: white;
+    color: black;
+    
+  }
+  
+  .logoutButton:active {
+    padding: 2px 17px;
+  }

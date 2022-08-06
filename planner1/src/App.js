@@ -31,7 +31,8 @@ function App() {
   }
 
   useEffect(() => {
-    var loggedInBool = localStorage.getItem('isLoggedIn');
+    var loggedInBool = null;
+    loggedInBool = localStorage.getItem('isLoggedIn');
 		if (loggedInBool !== null && loggedInBool === 'true') { setIsLoggedIn(true); }
     else { setIsLoggedIn(false); }
 	}, []);
@@ -39,7 +40,7 @@ function App() {
   return (
     <>
       <Router>
-        <Sidebar handleGetCurrentPageElement={getCurrentPageElement} isLoggedIn={loggedIn}/>
+        <Sidebar handleGetCurrentPageElement={getCurrentPageElement} isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path = '/' exact element = {<NotesPage handleSetCurrentPage={setCurrentPageElement} />} />
           <Route path = '/profile' exact element = {<ProfilePage handleSetCurrentPage={setCurrentPageElement} />} />

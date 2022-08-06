@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
 const LoginPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
-
+    
     const [repo, setRepo] = useState([]);
     const navigate = useNavigate();
 
@@ -35,6 +35,7 @@ const LoginPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
         {
             navigate('/');
             handleSetLoggedIn(true);
+            window.location.reload();
         }
         else
         {
