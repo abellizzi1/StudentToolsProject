@@ -7,7 +7,7 @@ import * as FaIcons from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
-const LoginPage = ({ handleSetCurrentPage }) => {
+const LoginPage = ({ handleSetCurrentPage, handleSetLoggedIn }) => {
 
     const [repo, setRepo] = useState([]);
     const navigate = useNavigate();
@@ -34,6 +34,7 @@ const LoginPage = ({ handleSetCurrentPage }) => {
         if (acc.length > 0 && acc[0].password === tempPassword)
         {
             navigate('/');
+            handleSetLoggedIn(true);
         }
         else
         {

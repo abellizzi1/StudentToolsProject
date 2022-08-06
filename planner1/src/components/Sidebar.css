@@ -113,3 +113,31 @@
   span {
     margin-left: 16px;
   }
+
+  .loginRegButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      position:absolute;
+      font-size: 25px;
+      cursor:pointer;
+      right: 10px;
+      margin-top:-25px;
+      border-radius: 10px;
+    vertical-align: top;
+    transition-timing-function: ease-out;
+    transition: 0.2s;
+  }
+  
+  .loginRegButton:hover {
+    background-color: white;
+    color: black;
+    
+  }
+  
+  .loginRegButton:active {
+    padding: 2px 17px;
+  }
