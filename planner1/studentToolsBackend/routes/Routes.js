@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const signUpTemplateCopy = require('../models/SignUpModels');
+const friendsCopy = require('../models/FriendsModel');
 
 router.post('/users/create', (request, response) =>{
     const signedUpUser = new signUpTemplateCopy({
@@ -21,6 +22,26 @@ router.post('/users/create', (request, response) =>{
 router.route('/users/get').get((request, response) =>{
     signUpTemplateCopy.find()
         .then(foundUsers => response.json(foundUsers))
+})
+//////////////////////////////////////////////////////////////
+
+router.post('/friends/create', (request, response) =>{
+    const addedFriend = new friendsCopy({
+        sender:request.body.sender,
+        receiver:request.body.receiver
+    })
+    addedFriend.save()
+    .then(data =>{
+        response.json(data)
+    })
+    .catch(error =>{
+        response.json(error)
+    })
+})
+
+router.route('/friends/get').get((request, response) =>{
+    friendsCopy.find()
+        .then(foundFriends => response.json(foundFriends))
 })
 
 module.exports = router;

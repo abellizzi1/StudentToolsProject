@@ -8,6 +8,7 @@ const cors = require('cors')
 dotenv.config()
 
 mongoose.connect(process.env.USERS, () =>console.log("USERS connected"));
+mongoose.connect(process.env.FRIENDS, () =>console.log("FRIENDS connected"));
 
 app.use(express.json())
 app.use(cors())

@@ -7,6 +7,21 @@ import {Link} from "react-router-dom";
 
 const FriendsPage = () => {
 
+    /*
+    In the backend, create a friends db.
+    In the friends db, have two emails and a date.
+    One email should be Sender, and one should be Receiver.
+    For example, user1 and user2:
+
+    Sender: user1
+    Receiver: user2
+
+    Sender: user2
+    Receiver: user1
+
+    Since they have both added each other, they will be listed on both friends pages.
+    */
+
     return(
         <div className='content'>
             <Link to={"/friends/add-friend"}>
