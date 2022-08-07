@@ -9,7 +9,7 @@ const Friend = ({ friendName, friendEmail, handleRemoveFriend }) => {
 		<div className='friendBox'>
 			<h3 id='friendName' className='friendBoxInfo'>Name: {friendName}</h3>
 			<h3 id='friendEmail' className='friendBoxInfo'>Email: {friendEmail}</h3>
-			<Link to={"/friends/messages"}>
+			<Link to={"/messages"}>
 				<button className='sendMessageButton'>Send Message</button>
 			</Link>
 			<button onClick={() => {handleRemoveFriend(friendEmail)} } className='friendRemoveButton'>Remove</button>
