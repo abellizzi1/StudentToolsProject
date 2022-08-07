@@ -77,6 +77,7 @@ const FriendsPage = ({ isLoggedIn }) => {
         getRepo();
         setFriendsState();
         setRunCount(0);
+        window.location.reload();
     }
 
     /*
@@ -110,6 +111,8 @@ const FriendsPage = ({ isLoggedIn }) => {
 
         getRepo();
         setFriendsState();
+        setRunCount(0);
+        window.location.reload();
 
         console.log(existingFriend[0]._id);
     }

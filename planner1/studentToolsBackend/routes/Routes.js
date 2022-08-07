@@ -45,10 +45,6 @@ router.route('/friends/get').get((request, response) =>{
 })
 
 router.route('/friends/remove/:id').delete((request, response) =>{
-    const friendToRemove = new friendsCopy({
-        sender:request.body.sender,
-        receiver:request.body.receiver
-    })
     friendsCopy.findByIdAndDelete(request.params.id)
         .then(foundFriend => response.json(foundFriend))
 })
