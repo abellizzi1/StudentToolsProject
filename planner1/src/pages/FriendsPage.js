@@ -21,31 +21,55 @@ const FriendsPage = ({ isLoggedIn }) => {
     Since they have both added each other, they will be listed on both friends pages.
     */
 
-    const [repo, setRepo] = useState([]);
+    const [usersRepo, setUsersRepo] = useState([]);
+    const [friendsRepo, setFriendsRepo] = useState([]);
+    const [friends, setFriends] = useState([]);
 
     const getRepo = () => {
         axios.get('http://localhost:4000/app/users/get')
             .then((response) => {
-                const myRepo = response.data;
-                setRepo(myRepo);
+                const tempUsersRepo = response.data;
+                setUsersRepo(tempUsersRepo);
+            });
+
+        axios.get('http://localhost:4000/app/friends/get')
+            .then((response) => {
+                const tempFriendsRepo = response.data;
+                setFriendsRepo(tempFriendsRepo);
             });
         }
 
     useEffect(() => {
         getRepo();
+
+        var loginEmail = localStorage.getItem('loggedInEmail');
+        var friendsArrayTemp = [];
+        for (let i = 0; i < friendsRepo.length-1; i++) {
+            for (let j = i+1; j < friendsRepo.length; j++) {
+                if (friendsRepo[i].receiver === friendsRepo[j].sender 
+                && friendsRepo[i].sender === friendsRepo[j].receiver
+                && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
+                    friendsArrayTemp.push(friendsRepo[i]);
+                }
+            }
+        }
+        setFriends(friendsArrayTemp);
     }, []);
 
     const addFriend = () => {
         var message = document.getElementById('msg');
         var tempEmail = document.getElementById('emailInput').value;
-        var existingAcc = repo.filter((user) => user.email === tempEmail);
+        var existingAcc = usersRepo.filter((user) => user.email === tempEmail);
+        var existingFriend = friendsRepo.filter((friend) => (friend.sender === localStorage.getItem('loggedInEmail') && friend.receiver === tempEmail));
 
         if (!isLoggedIn) {
             message.textContent = 'Not logged in!';
         }
-        else if (existingAcc.length === 0)
-        {
+        else if (existingAcc.length === 0) {
             message.textContent = 'Account not found.';
+        }
+        else if (existingFriend.length > 0) {
+            message.textContent = 'User already added';
         }
         else {
             const newFriend = {
