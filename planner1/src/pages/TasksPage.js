@@ -5,11 +5,9 @@ import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
 import Task from '../components/Task';
 
-const TasksPage = ({ handleSetCurrentPage }) => {
-    
-    useEffect(() => {
-		handleSetCurrentPage("Tasks");
+const TasksPage = () => {
 
+    useEffect(() => {
         const savedTasks = JSON.parse(
             localStorage.getItem('allTasksData')
         );

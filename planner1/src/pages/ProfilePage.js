@@ -4,12 +4,8 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-const ProfilePage = ({ handleSetCurrentPage }) => {
+const ProfilePage = () => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Profile");
-	}, []);
-    
 
     return(
             <div className='content'>

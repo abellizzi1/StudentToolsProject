@@ -17,6 +17,12 @@ export const SidebarOptions = [
     cName: 'sidebar-text'
   },
   {
+    title: 'Messages',
+    path: '/messages',
+    icon: <FaIcons.FaComments />,
+    cName: 'sidebar-text'
+  },
+  {
     title: 'Notes',
     path: '/',
     icon: <FaIcons.FaStickyNote />,

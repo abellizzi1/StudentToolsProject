@@ -4,11 +4,9 @@ import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
 
-const NotesPage = ({ handleSetCurrentPage }) => {
-
+const NotesPage = () => {
+	
     useEffect(() => {
-		handleSetCurrentPage("Notes");
-
 		const savedNotes = JSON.parse(
 			localStorage.getItem('allNotesData')
 		);
@@ -18,8 +16,7 @@ const NotesPage = ({ handleSetCurrentPage }) => {
 		console.log(localStorage.getItem('allNotesData'));
 	}, []);
 
-	const [notes, setNotes] = useState([
-	]);
+	const [notes, setNotes] = useState([]);
 
     const addNote = () => {
 		const newNote = {

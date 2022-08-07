@@ -3,37 +3,74 @@ import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
+import {useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
-const RegisterPage = ({ handleSetCurrentPage }) => {
+const RegisterPage = ({ handleSetLoggedIn }) => {
 
-    useEffect(() => {
-		handleSetCurrentPage("Register");
-	}, []);
+    const [repo, setRepo] = useState([]);
+
+    const navigate = useNavigate();
+
+    const getRepo = () => {
+        axios.get('http://localhost:4000/app/users/get')
+            .then((response) => {
+                const myRepo = response.data;
+                setRepo(myRepo);
+            });
+        }
+    
+        useEffect(() => {
+            getRepo();
+        }, []);
 
     const submitData = () => {
         var tempFirstName = document.getElementById('firstNameInput').value;
         var tempLastName = document.getElementById('lastNameInput').value;
         var tempEmail = document.getElementById('emailInput').value
         var tempPassword = document.getElementById('passwordInput').value;
+        var message = document.getElementById('msg');
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var existingAcc = repo.filter((user) => user.email === tempEmail);
 
-        console.log(tempFirstName);
-        console.log(tempLastName);
-        console.log(tempEmail);
-        console.log(tempPassword);
-
-        const registered = {
-            firstName:tempFirstName,
-            lastName:tempLastName,
-            email:tempEmail,
-            password:tempPassword
+        if (tempFirstName.length === 0)
+        {
+            message.textContent = 'Enter a first name.';
         }
-
-        axios.post('http://localhost:4000/app/signup', registered)
-            .then(response => console.log(response.data));
-
-        window.location.reload();
+        else if (tempLastName.length === 0)
+        {
+            message.textContent = 'Enter a last name.';
+        }
+        else if (!tempEmail.match(mailformat))
+        {
+            message.textContent = 'Enter a valid email.';
+        }
+        else if (existingAcc.length > 0)
+        {
+            message.textContent = 'That email is taken.'
+        }
+        else if (tempPassword.length < 8)
+        {
+            message.textContent = 'Password must be at least 8 characters.';
+        }
+        else
+        {
+            const registered = {
+                firstName:tempFirstName,
+                lastName:tempLastName,
+                email:tempEmail,
+                password:tempPassword
+            }
+    
+            axios.post('http://localhost:4000/app/users/create', registered)
+                .then(response => console.log(response.data));
+    
+            navigate('/');
+            handleSetLoggedIn(true);
+            localStorage.setItem('loggedInEmail', tempEmail);
+            window.location.reload();
+        }
     }
 
     return(
@@ -53,6 +90,7 @@ const RegisterPage = ({ handleSetCurrentPage }) => {
                             <label className='registerLabels' for='passwordInput'>Password:</label>
                             <input className='passwordInput' type='password' id='passwordInput' name='passwordInput' />
                         </form>
+                        <p className='errorMessage' id='msg'>Password must be at least 8 characters.</p>
                         <button className='registerButton' onClick={submitData} id='submitButton'>Register</button>
                     </div>
                 </div>

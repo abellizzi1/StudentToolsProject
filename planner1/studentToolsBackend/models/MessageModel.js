@@ -1,19 +1,15 @@
 const mongoose = require('mongoose');
 
-const signUpTemplate = new mongoose.Schema({
-    firstName:{
+const messageTemplate = new mongoose.Schema({
+    sender:{
         type:String,
         required:true
     },
-    lastName:{
+    receiver:{
         type:String, 
         required:true
     },
-    email:{
-        type:String,
-        required:true
-    },
-    password:{
+    text:{
         type:String,
         required:true
     },
@@ -23,4 +19,4 @@ const signUpTemplate = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('users', signUpTemplate)
+module.exports = mongoose.model('messages', messageTemplate)

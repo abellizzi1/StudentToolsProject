@@ -7,11 +7,11 @@
     overflow:hidden;
   }
   
-.h1 {
+.sidebarHeader {
     text-align: center;
     color: white;
     margin-left: 2%;
-    margin-top: 0.8%;
+    margin-top: 0.6%;
 }
 
   .menu-bars {
@@ -67,9 +67,9 @@
     display: flex;
     justify-content: start;
     align-items: left;
-    padding: 8px 0px 8px 0px;
     list-style: none;
     height: 60px;
+    margin-bottom:15px;
   }
   
   .sidebar-text a {
@@ -88,6 +88,7 @@
   
   .sidebar-text a:hover {
     background-color: #1a83ff;
+    color:#f5f5f5;
   }
 
   .sidebar-text a:active {
@@ -111,4 +112,62 @@
   
   span {
     margin-left: 16px;
+  }
+
+  .loginRegButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      position:absolute;
+      font-size: 25px;
+      cursor:pointer;
+      right: 15px;
+      margin-top:-25px;
+      border-radius: 10px;
+    vertical-align: top;
+    transition-timing-function: ease-out;
+    transition: 0.2s;
+  }
+  
+  .loginRegButton:hover {
+    background-color: white;
+    color: black;
+    
+  }
+  
+  .loginRegButton:active {
+    padding: 3px 18px;
+    right: 17px;
+    margin-top:-23px;
+  }
+
+  .logoutButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+      text-align: center;
+      text-decoration: none;
+      position:absolute;
+      font-size: 25px;
+      cursor:pointer;
+      right: 15px;
+      margin-top:-5px;
+      border-radius: 10px;
+    vertical-align: top;
+    transition-timing-function: ease-out;
+    transition: 0.2s;
+  }
+  
+  .logoutButton:hover {
+    background-color: white;
+    color: black;
+    
+  }
+  
+  .logoutButton:active {
+    padding: 2px 17px;
   }

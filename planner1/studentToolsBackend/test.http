@@ -1,9 +1,7 @@
-POST http://localhost:4000/app/signup
+DELETE http://localhost:4000/app/friends/remove
 Content-Type: application/json
 
 {
-    "firstName":"Joseph",
-    "lastName":"joey",
-    "email":"joe@mail.com",
-    "password":"josejosey"
+    "sender":"test@joe.com",
+    "receiver":"ang@ang.net"
 }

@@ -6,14 +6,53 @@
 
   .registerBox {
 	width:650px;
-	height:750px;
+	height:600px;
 	background-color: white;
 	margin-top:50px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 30px 30px rgba(0,0,0,0.24);
+	margin-bottom:50px;
+  }
+
+  .loginBox {
+	width:650px;
+	height:550px;
+	background-color: white;
+	margin-top:50px;
+	margin-bottom:50px;
 	border-radius: 20px;
 	box-shadow: 0px 0px 30px 30px rgba(0,0,0,0.24);
   }
 
   .registerButton {
+	background-color: rgb(3, 48, 54);
+	border: none;
+	color: white;
+	padding: 9px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+	margin-left:259px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+	margin-top:30px;
+  }
+
+.registerButton:hover {
+	background-color: rgb(3, 38, 44);
+}
+
+.registerButton:active {
+	padding: 7px 22px;
+	margin-top: 32px;
+	margin-left:261px;
+}
+
+.loginButton {
 	background-color: rgb(6, 155, 175);
 	border: none;
 	color: white;
@@ -23,22 +62,22 @@
     display: inline-block;
     font-size: 25px;
     cursor:pointer;
-	margin-left: 235px;
+	margin-left:272px;
     border-radius: 10px;
 	vertical-align: top;
 	transition-timing-function: ease-out;
 	transition: 0.2s;
-	margin-top:70px;
+	margin-top:20px;
   }
 
-.registerButton:hover {
+.loginButton:hover {
 	background-color: rgb(6, 121, 136);
 }
 
-.registerButton:active {
+.loginButton:active {
 	padding: 7px 22px;
-	margin-top: 72px;
-	margin-left:237px;
+	margin-top: 22px;
+	margin-left:274px;
 }
 
 .registerLabels {
@@ -82,4 +121,13 @@
 	font-size:20px;
 	border-radius: 10px;
 	margin-top:50px;
+}
+
+.errorMessage {
+	color:red;
+	text-align: center;
+	margin-top:10px;
+	font-weight:bold;
+	font-size:21px;
+	overflow-wrap:break-word;
 }

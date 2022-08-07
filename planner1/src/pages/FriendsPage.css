@@ -1,0 +1,126 @@
+.friendBox {
+	width:400px;
+	height:200px;
+	background-color: white;
+	margin-top:30px;
+    margin-left:30px;
+	border-radius: 20px;
+	margin-bottom:50px;
+	box-shadow: 0px 0px 30px 30px rgba(0,0,0,0.24);
+    transition-timing-function: ease-out;
+	transition: 0.2s;
+    position:relative;
+  }
+
+  .friendBox:hover {
+	background-color: rgb(240, 240, 240);
+  }
+
+  .friendRemoveButton {
+	background-color: red;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor:pointer;
+    display: inline-block;
+    position:relative;
+    height:35px;
+    margin-top: 68px;
+    margin-left:161px;
+    border-radius: 20px;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.friendRemoveButton:hover {
+	background-color: rgb(233, 0, 0);
+}
+
+.friendRemoveButton:active {
+	background-color: rgb(200, 0, 0);
+}
+
+.sendMessageButton {
+	background-color: rgb(1, 184, 1);
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor:pointer;
+    margin-left:5px;
+    display: inline-block;
+    position:relative;
+    border-radius: 20px;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+    height:35px;
+}
+
+.sendMessageButton:hover {
+	background-color: rgb(1, 170, 1);
+}
+
+.sendMessageButton:active {
+	background-color: rgb(1, 145, 1);
+}
+
+.friendBoxInfo {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:24px;
+    padding-top:8px;
+    margin-left:8px;
+    overflow-wrap:break-word;
+}
+
+.addFriendInput {
+    margin-left:30px;
+	padding:7px;
+	color:rgb(9, 72, 80);
+	font-size:20px;
+	border-radius: 10px;
+    margin-top:10px;
+    width:350px;
+}
+
+.addFriendButton {
+	background-color: transparent;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+    margin-top: 10px;
+	margin-left: 10px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.addFriendButton:hover {
+	background-color: white;
+	color: black;
+	
+}
+
+.addFriendButton:active {
+	padding: 3px 18px;
+	margin-top:12px;
+}
+
+.errorMessageFriends {
+	color:red;
+	font-weight:bold;
+	font-size:21px;
+	overflow-wrap:break-word;
+    display:inline-block;
+    margin-left: 10px;
+}
