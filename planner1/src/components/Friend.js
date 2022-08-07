@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import '../pages/FriendsPage.css';
 
-const Friend = ({ friendName, friendEmail }) => {
+const Friend = ({ friendName, friendEmail, handleRemoveFriend }) => {
 	
     return (
 		<div className='friendBox'>
@@ -12,7 +12,7 @@ const Friend = ({ friendName, friendEmail }) => {
 			<Link to={"/friends/messages"}>
 				<button className='sendMessageButton'>Send Message</button>
 			</Link>
-			<button className='friendRemoveButton'>Remove</button>
+			<button onClick={() => {handleRemoveFriend(friendEmail)} } className='friendRemoveButton'>Remove</button>
 		</div>
 	);
 };

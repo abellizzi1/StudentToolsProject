@@ -25,6 +25,7 @@ const FriendsPage = ({ isLoggedIn }) => {
     const [usersRepo, setUsersRepo] = useState([]);
     const [friendsRepo, setFriendsRepo] = useState([]);
     const [friends, setFriends] = useState([]);
+    const [runCount, setRunCount] = useState(0);
 
     const getRepo = () => {
         
@@ -72,42 +73,86 @@ const FriendsPage = ({ isLoggedIn }) => {
 
             message.textContent = 'Friend added.';
         }
+
+        getRepo();
+        setFriendsState();
+        setRunCount(0);
+    }
+
+    /*
+ const deleteNote = (id) => {
+		var i = 0;
+		while (i < notes.length)
+		{
+			if (notes[i].id === id)
+			{
+				notes.splice(i, 1);
+				setNotes(notes);
+				break;
+			}
+			i++;
+		}
+		localStorage.setItem('allNotesData', JSON.stringify(notes));
+		window.location.reload();
+	};
+    */
+
+    const removeFriend = (receiverEmail) => {
+        var existingFriend = friendsRepo.filter((friend) => (friend.sender === localStorage.getItem('loggedInEmail') && friend.receiver === receiverEmail));
+
+        const friendToRemove = {
+            sender:existingFriend[0].receiver,
+            receiver:existingFriend[0].sender
+        }
+
+        axios.delete("http://localhost:4000/app/friends/remove/" + existingFriend[0]._id)
+            .then(response => console.log(response.data));
+
+        getRepo();
+        setFriendsState();
+
+        console.log(existingFriend[0]._id);
+    }
+
+    const setFriendsState = () => {
+        var loginEmail = localStorage.getItem('loggedInEmail');
+        console.log(localStorage.getItem('loggedInEmail'));
+        console.log(friendsRepo);
+        var friendsArrayTemp = [];
+        for (let i = 0; i < friendsRepo.length-1; i++) {
+            for (let j = i+1; j < friendsRepo.length; j++) {
+                if (friendsRepo[i].receiver === friendsRepo[j].sender 
+                && friendsRepo[i].sender === friendsRepo[j].receiver
+                && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
+                    console.log('friend found');
+                    var friendToAdd;
+                    if (friendsRepo[i].sender === loginEmail)
+                    {
+                        friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].receiver);
+                    }
+                    else {
+                        friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].sender);
+                    }
+
+                    if (friendToAdd.length > 0) {
+                        const newFriend = {
+                            name: (friendToAdd[0].firstName + " " + friendToAdd[0].lastName),
+                            email: friendToAdd[0].email
+                        };
+                        friendsArrayTemp.push(newFriend);
+                    }
+                }
+            }
+        }
+        setFriends(friendsArrayTemp);
     }
 
     useEffect(() => {
         
-        if (friends.length === 0 && localStorage.getItem('loggedInEmail') !== '') {
+        if (friends.length === 0 && runCount < 5 && localStorage.getItem('loggedInEmail') !== '') {
             getRepo();
-            var loginEmail = localStorage.getItem('loggedInEmail');
-            console.log(localStorage.getItem('loggedInEmail'));
-            console.log(friendsRepo);
-            var friendsArrayTemp = [];
-            for (let i = 0; i < friendsRepo.length-1; i++) {
-                for (let j = i+1; j < friendsRepo.length; j++) {
-                    if (friendsRepo[i].receiver === friendsRepo[j].sender 
-                    && friendsRepo[i].sender === friendsRepo[j].receiver
-                    && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
-                        console.log('friend found');
-                        var friendToAdd;
-                        if (friendsRepo[i].sender === loginEmail)
-                        {
-                            friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].receiver);
-                        }
-                        else {
-                            friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].sender);
-                        }
-
-                        if (friendToAdd.length > 0) {
-                            const newFriend = {
-                                name: (friendToAdd[0].firstName + " " + friendToAdd[0].lastName),
-                                email: friendToAdd[0].email
-                            };
-                            friendsArrayTemp.push(newFriend);
-                        }
-                    }
-                }
-            }
-            setFriends(friendsArrayTemp);
+            setFriendsState();
+            setRunCount(runCount + 1);
         }
         
     }, [friendsRepo]);
@@ -119,7 +164,7 @@ const FriendsPage = ({ isLoggedIn }) => {
             placeholder="Enter friend's email here to add them" />
             <button 
                 className='addFriendButton'
-                onClick={addFriend}>
+                onClick={() => {addFriend()} }>
                 {<FaIcons.FaUserPlus />} Add Friend
             </button>
             <p className='errorMessageFriends' id='msg'></p>
@@ -128,6 +173,7 @@ const FriendsPage = ({ isLoggedIn }) => {
                 <Friend
                     friendName={friend.name}
                     friendEmail={friend.email}
+                    handleRemoveFriend={removeFriend}
                 />
             ))}
             
