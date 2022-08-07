@@ -25,6 +25,11 @@
 	overflow-x:hidden;
   }
 
+  .existingMessagesContent::-webkit-scrollbar-track {
+    margin-bottom:20px;
+    margin-top:20px;
+  }
+
   .existingMessageButton {
 	background-color: rgb(6, 155, 175);
 	border: none;
@@ -78,7 +83,7 @@
 }
 
 .sendMessageButtonMessages {
-	background-color: rgb(1, 184, 1);
+	background-color: blueviolet;;
 	border: none;
 	color: white;
 	padding: 5px 20px;
@@ -96,11 +101,11 @@
 }
 
 .sendMessageButtonMessages:hover {
-	background-color: rgb(1, 170, 1);
+	background-color: rgb(110, 34, 182);
 }
 
 .sendMessageButtonMessages:active {
-	background-color: rgb(1, 145, 1);
+	background-color: rgb(89, 29, 145);
 }
 
 .messageTextRight {
