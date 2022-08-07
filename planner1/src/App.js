@@ -10,7 +10,6 @@ import GroupTasksPage from './pages/GroupTasksPage';
 import CreateTaskPage from './pages/CreateTaskPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-import AddFriendPage from './pages/AddFriendPage';
 import MessagesPage from './pages/MessagesPage';
 
 function App() {
@@ -37,8 +36,7 @@ function App() {
         <Routes>
           <Route path = '/' exact element = {<NotesPage />} />
           <Route path = '/profile' exact element = {<ProfilePage />} />
-          <Route path = '/friends' exact element = {<FriendsPage />} />
-          <Route path = '/friends/add-friend' exact element = {<AddFriendPage />} />
+          <Route path = '/friends' exact element = {<FriendsPage isLoggedIn={loggedIn} />} />
           <Route path = '/friends/messages' exact element = {<MessagesPage />} />
           <Route path = '/tasks' exact element = {<TasksPage />} />
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />

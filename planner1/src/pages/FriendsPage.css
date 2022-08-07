@@ -28,7 +28,7 @@
     display: inline-block;
     position:relative;
     height:35px;
-    margin-top: 73px;
+    margin-top: 68px;
     margin-left:62px;
     border-radius: 20px;
 	transition-timing-function: ease-out;
@@ -72,7 +72,55 @@
 .friendBoxInfo {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:25px;
-    padding-top:5px;
-    margin-left:5px;
+    padding-top:8px;
+    margin-left:8px;
     overflow-wrap:break-word;
+}
+
+.addFriendInput {
+    margin-left:30px;
+	padding:7px;
+	color:rgb(9, 72, 80);
+	font-size:20px;
+	border-radius: 10px;
+    margin-top:10px;
+    width:350px;
+}
+
+.addFriendButton {
+	background-color: transparent;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+    margin-top: 10px;
+	margin-left: 10px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.addFriendButton:hover {
+	background-color: white;
+	color: black;
+	
+}
+
+.addFriendButton:active {
+	padding: 3px 18px;
+	margin-top:12px;
+}
+
+.errorMessageFriends {
+	color:red;
+	font-weight:bold;
+	font-size:21px;
+	overflow-wrap:break-word;
+    display:inline-block;
+    margin-left: 10px;
 }

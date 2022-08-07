@@ -34,6 +34,7 @@ const LoginPage = ({ handleSetLoggedIn }) => {
         {
             navigate('/');
             handleSetLoggedIn(true);
+            localStorage.setItem('loggedInEmail', tempEmail);
             window.location.reload();
         }
         else

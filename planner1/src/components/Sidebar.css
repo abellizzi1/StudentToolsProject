@@ -139,7 +139,9 @@
   }
   
   .loginRegButton:active {
-    padding: 2px 17px;
+    padding: 3px 18px;
+    right: 17px;
+    margin-top:-23px;
   }
 
   .logoutButton {
