@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
 import {Link} from "react-router-dom";
 import axios from 'axios'
+import Friend from '../components/Friend.js';
 
 const FriendsPage = ({ isLoggedIn }) => {
     /*
@@ -26,35 +27,24 @@ const FriendsPage = ({ isLoggedIn }) => {
     const [friends, setFriends] = useState([]);
 
     const getRepo = () => {
+        
         axios.get('http://localhost:4000/app/users/get')
             .then((response) => {
                 const tempUsersRepo = response.data;
+                console.log(tempUsersRepo);
                 setUsersRepo(tempUsersRepo);
             });
 
         axios.get('http://localhost:4000/app/friends/get')
             .then((response) => {
                 const tempFriendsRepo = response.data;
+                console.log(tempFriendsRepo);
                 setFriendsRepo(tempFriendsRepo);
             });
+       
         }
 
-    useEffect(() => {
-        getRepo();
-
-        var loginEmail = localStorage.getItem('loggedInEmail');
-        var friendsArrayTemp = [];
-        for (let i = 0; i < friendsRepo.length-1; i++) {
-            for (let j = i+1; j < friendsRepo.length; j++) {
-                if (friendsRepo[i].receiver === friendsRepo[j].sender 
-                && friendsRepo[i].sender === friendsRepo[j].receiver
-                && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
-                    friendsArrayTemp.push(friendsRepo[i]);
-                }
-            }
-        }
-        setFriends(friendsArrayTemp);
-    }, []);
+        
 
     const addFriend = () => {
         var message = document.getElementById('msg');
@@ -63,13 +53,13 @@ const FriendsPage = ({ isLoggedIn }) => {
         var existingFriend = friendsRepo.filter((friend) => (friend.sender === localStorage.getItem('loggedInEmail') && friend.receiver === tempEmail));
 
         if (!isLoggedIn) {
-            message.textContent = 'Not logged in!';
+            message.textContent = 'Not logged in.';
         }
         else if (existingAcc.length === 0) {
             message.textContent = 'Account not found.';
         }
         else if (existingFriend.length > 0) {
-            message.textContent = 'User already added';
+            message.textContent = 'User already added.';
         }
         else {
             const newFriend = {
@@ -84,6 +74,44 @@ const FriendsPage = ({ isLoggedIn }) => {
         }
     }
 
+    useEffect(() => {
+        
+        if (friends.length === 0 && localStorage.getItem('loggedInEmail') !== '') {
+            getRepo();
+            var loginEmail = localStorage.getItem('loggedInEmail');
+            console.log(localStorage.getItem('loggedInEmail'));
+            console.log(friendsRepo);
+            var friendsArrayTemp = [];
+            for (let i = 0; i < friendsRepo.length-1; i++) {
+                for (let j = i+1; j < friendsRepo.length; j++) {
+                    if (friendsRepo[i].receiver === friendsRepo[j].sender 
+                    && friendsRepo[i].sender === friendsRepo[j].receiver
+                    && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
+                        console.log('friend found');
+                        var friendToAdd;
+                        if (friendsRepo[i].sender === loginEmail)
+                        {
+                            friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].receiver);
+                        }
+                        else {
+                            friendToAdd = usersRepo.filter((user) => user.email === friendsRepo[i].sender);
+                        }
+
+                        if (friendToAdd.length > 0) {
+                            const newFriend = {
+                                name: (friendToAdd[0].firstName + " " + friendToAdd[0].lastName),
+                                email: friendToAdd[0].email
+                            };
+                            friendsArrayTemp.push(newFriend);
+                        }
+                    }
+                }
+            }
+            setFriends(friendsArrayTemp);
+        }
+        
+    }, [friendsRepo]);
+
     return(
         <div className='content'>
             <input className='addFriendInput' 
@@ -96,14 +124,12 @@ const FriendsPage = ({ isLoggedIn }) => {
             </button>
             <p className='errorMessageFriends' id='msg'></p>
 
-            <div className='friendBox'>
-                <h3 id='friendName' className='friendBoxInfo'>Name:</h3>
-                <h3 id='friendEmail' className='friendBoxInfo'>Email:</h3>
-                <Link to={"/friends/messages"}>
-                    <button className='sendMessageButton'>Send Message</button>
-                </Link>
-                <button className='friendRemoveButton'>Remove</button>
-            </div>
+            {friends.map((friend) => (
+                <Friend
+                    friendName={friend.name}
+                    friendEmail={friend.email}
+                />
+            ))}
             
         </div>
     )

@@ -6,7 +6,7 @@ const LoginLogout = ({ isLoggedIn, handleSetLoggedIn }) => {
 	
     if (isLoggedIn) {
         return (
-            <button onClick={() => { handleSetLoggedIn(false); window.location.reload(); }}className='logoutButton'>Logout</button>
+            <button onClick={() => { handleSetLoggedIn(false); localStorage.setItem('loggedInEmail', ''); window.location.reload(); }} className='logoutButton'>Logout</button>
         );
     }
     else {
