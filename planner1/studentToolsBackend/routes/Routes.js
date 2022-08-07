@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const signUpTemplateCopy = require('../models/SignUpModels');
 const friendsCopy = require('../models/FriendsModel');
+const messageCopy = require('../models/MessageModel');
 
 router.post('/users/create', (request, response) =>{
     const signedUpUser = new signUpTemplateCopy({
@@ -23,6 +24,7 @@ router.route('/users/get').get((request, response) =>{
     signUpTemplateCopy.find()
         .then(foundUsers => response.json(foundUsers))
 })
+
 //////////////////////////////////////////////////////////////
 
 router.post('/friends/create', (request, response) =>{
@@ -47,6 +49,28 @@ router.route('/friends/get').get((request, response) =>{
 router.route('/friends/remove/:id').delete((request, response) =>{
     friendsCopy.findByIdAndDelete(request.params.id)
         .then(foundFriend => response.json(foundFriend))
+})
+
+//////////////////////////////////////////////////////////////
+
+router.post('/messages/create', (request, response) =>{
+    const sentMessage = new messageCopy({
+        sender:request.body.sender,
+        receiver:request.body.receiver,
+        text:request.body.text
+    })
+    sentMessage.save()
+    .then(data =>{
+        response.json(data)
+    })
+    .catch(error =>{
+        response.json(error)
+    })
+})
+
+router.route('/messages/get').get((request, response) =>{
+    messageCopy.find()
+        .then(foundMessages => response.json(foundMessages))
 })
 
 module.exports = router;

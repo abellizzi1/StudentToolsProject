@@ -80,31 +80,8 @@ const FriendsPage = ({ isLoggedIn }) => {
         window.location.reload();
     }
 
-    /*
- const deleteNote = (id) => {
-		var i = 0;
-		while (i < notes.length)
-		{
-			if (notes[i].id === id)
-			{
-				notes.splice(i, 1);
-				setNotes(notes);
-				break;
-			}
-			i++;
-		}
-		localStorage.setItem('allNotesData', JSON.stringify(notes));
-		window.location.reload();
-	};
-    */
-
     const removeFriend = (receiverEmail) => {
         var existingFriend = friendsRepo.filter((friend) => (friend.sender === localStorage.getItem('loggedInEmail') && friend.receiver === receiverEmail));
-
-        const friendToRemove = {
-            sender:existingFriend[0].receiver,
-            receiver:existingFriend[0].sender
-        }
 
         axios.delete("http://localhost:4000/app/friends/remove/" + existingFriend[0]._id)
             .then(response => console.log(response.data));

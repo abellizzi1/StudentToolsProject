@@ -37,7 +37,7 @@ function App() {
           <Route path = '/' exact element = {<NotesPage />} />
           <Route path = '/profile' exact element = {<ProfilePage />} />
           <Route path = '/friends' exact element = {<FriendsPage isLoggedIn={loggedIn} />} />
-          <Route path = '/friends/messages' exact element = {<MessagesPage />} />
+          <Route path = '/messages' exact element = {<MessagesPage />} />
           <Route path = '/tasks' exact element = {<TasksPage />} />
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />
           <Route path = '/group-tasks' exact element = {<GroupTasksPage />} />
