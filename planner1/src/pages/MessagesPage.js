@@ -28,6 +28,15 @@ const MessagesPage = () => {
                 </div>
 
                 <div className='messageScreen'>
+                    <div className='messagesContainer'>
+                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p className='messageTextLeft'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p className='messageTextLeft'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    </div>
+
                     <input className='messagesInput' 
                     type='text' id='emailInput' name='emailInput' 
                     placeholder="Enter message here" />

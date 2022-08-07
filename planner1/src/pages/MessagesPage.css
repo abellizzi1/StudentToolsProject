@@ -7,7 +7,7 @@
 .messagesHeader {
     color:white;
     text-align: center;
-    font-size:30px;
+    font-size:27px;
     margin-top:5px;
 }
 
@@ -101,4 +101,62 @@
 
 .sendMessageButtonMessages:active {
 	background-color: rgb(1, 145, 1);
+}
+
+.messageTextRight {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: blueviolet;
+    color:white;
+    width:400px;
+    border-radius:20px;
+    height:auto;
+    font-size:20px;
+    padding-left:15px;
+    padding-right:15px;
+    overflow-wrap:break-word;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.24);
+    transition-timing-function: ease-out;
+	transition: 0.2s;
+    margin-left:450px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.messageTextRight:hover {
+    background-color: rgb(110, 34, 182);
+}
+
+.messageTextLeft {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(117, 117, 117);
+    color:white;
+    width:400px;
+    border-radius:20px;
+    height:auto;
+    font-size:20px;
+    padding-left:15px;
+    padding-right:15px;
+    overflow-wrap:break-word;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.24);
+    transition-timing-function: ease-out;
+	transition: 0.2s;
+    margin-left:10px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.messageTextLeft:hover {
+    background-color: rgb(90, 90, 90);
+}
+
+.messagesContainer {
+    width:880px;
+	height:420px;
+	background-color:white;
+	border-radius: 20px;
+    margin-top:10px;
+    margin-left:10px;
+    position:relative;
+    overflow:scroll;
+	overflow-x:hidden;
 }
