@@ -148,15 +148,15 @@ const FriendsPage = ({ isLoggedIn }) => {
                 {<FaIcons.FaUserPlus />} Add Friend
             </button>
             <p className='errorMessageFriends' id='msg'></p>
-
-            {friends.map((friend) => (
-                <Friend
-                    friendName={friend.name}
-                    friendEmail={friend.email}
-                    handleRemoveFriend={removeFriend}
-                />
-            ))}
-            
+            <div>
+                {friends.map((friend) => (
+                    <Friend
+                        friendName={friend.name}
+                        friendEmail={friend.email}
+                        handleRemoveFriend={removeFriend}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

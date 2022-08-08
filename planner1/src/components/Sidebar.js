@@ -22,21 +22,19 @@ const Sidebar = ({ isLoggedIn, handleSetLoggedIn }) => {
         currPageElement.textContent = 'Profile';
         break;
       case '/friends':
+      case '/start-conversation':
         currPageElement.textContent = 'Friends';
         break;
       case '/messages':
         currPageElement.textContent = 'Messages';
         break;
-      case '/start-conversation':
-        currPageElement.textContent = 'Start Conversation';
-        break;
       case '/tasks':
+      case '/tasks/create-task':
         currPageElement.textContent = 'Tasks';
         break;
-      case '/tasks/create-task':
-        currPageElement.textContent = 'Create Task';
-        break;
       case '/group-tasks':
+      case '/group-tasks/selected-group-task':
+      case '/group-tasks/create-group-task':
         currPageElement.textContent = 'Group Tasks';
         break;
       case '/register':
