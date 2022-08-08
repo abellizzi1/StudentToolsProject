@@ -27,6 +27,9 @@ const Sidebar = ({ isLoggedIn, handleSetLoggedIn }) => {
       case '/messages':
         currPageElement.textContent = 'Messages';
         break;
+      case '/start-conversation':
+        currPageElement.textContent = 'Start Conversation';
+        break;
       case '/tasks':
         currPageElement.textContent = 'Tasks';
         break;
