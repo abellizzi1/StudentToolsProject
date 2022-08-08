@@ -130,6 +130,7 @@ const MessagesPage = () => {
                             <ConversationMessages
                                 receiver={sc.receiver}
                                 text={sc.text}
+                                date={sc.date}
                             />
                         ))}
                     </div>
