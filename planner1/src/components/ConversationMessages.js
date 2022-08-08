@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import '../pages/MessagesPage.css';
 
-const ConversationMessages = ({  }) => {
+const ConversationMessages = ({ receiver, text }) => {
 	
     /*
     Returns each conversation message based on the selected ExistingConversation.
@@ -12,7 +12,7 @@ const ConversationMessages = ({  }) => {
 
     return (
 		<div>
-			
+			  <p className={`messageText${receiver === localStorage.getItem('loggedInEmail') ? "Left" : "Right"}`}>{text}</p>
 		</div>
 	);
 };

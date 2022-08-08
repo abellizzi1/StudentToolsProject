@@ -12,7 +12,8 @@ const ExistingConversation = ({ conversationName, conversationEmail, handleSelec
 
     return (
 		<div>
-			  <button className='existingMessageButton'>{conversationName}</button>
+			  <button onClick={() => { handleSelectConversation(conversationEmail) } }
+        className='existingMessageButton'>{conversationName}</button>
 		</div>
 	);
 };

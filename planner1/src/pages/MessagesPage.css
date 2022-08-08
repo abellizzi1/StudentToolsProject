@@ -2,6 +2,7 @@
 	display:flex;
 	align-items:center;
 	justify-content: center;
+    overflow:visible;
   }
 
 .messagesHeader {
@@ -58,7 +59,7 @@
 }
 
 .messageScreen {
-	width:900px;
+	width:700px;
 	height:500px;
 	background-color: white;
 	border-radius: 20px;
@@ -68,7 +69,6 @@
     transition-timing-function: ease-out;
 	transition: 0.2s;
     position:relative;
-	overflow-x:hidden;
   }
 
   .messagesInput {
@@ -77,7 +77,7 @@
 	color:rgb(9, 72, 80);
 	font-size:20px;
 	border-radius: 20px;
-    width:700px;
+    width:500px;
     bottom:10px;
     position:absolute;
 }
@@ -97,7 +97,7 @@
 	transition: 0.2s;
     height:50px;
     bottom:10px;
-    margin-left:720px;
+    margin-left:520px;
 }
 
 .sendMessageButtonMessages:hover {
@@ -112,7 +112,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: blueviolet;
     color:white;
-    width:400px;
+    width:330px;
     border-radius:20px;
     height:auto;
     font-size:20px;
@@ -122,9 +122,10 @@
     box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.24);
     transition-timing-function: ease-out;
 	transition: 0.2s;
-    margin-left:450px;
+    margin-left:330px;
     margin-top:15px;
     margin-bottom:15px;
+    position:relative;
 }
 
 .messageTextRight:hover {
@@ -135,7 +136,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(117, 117, 117);
     color:white;
-    width:400px;
+    width:330px;
     border-radius:20px;
     height:auto;
     font-size:20px;
@@ -155,7 +156,7 @@
 }
 
 .messagesContainer {
-    width:880px;
+    width:680px;
 	height:420px;
 	background-color:white;
 	border-radius: 20px;

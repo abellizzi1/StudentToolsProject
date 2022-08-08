@@ -12,7 +12,7 @@ const MessagesPage = () => {
 
     const [usersRepo, setUsersRepo] = useState([]);
     const [messagesRepo, setMessagesRepo] = useState([]);
-    const [selectedConversation, setSelectedConversation] = useState('');
+    const [selectedConversation, setSelectedConversation] = useState([]);
     const [conversations, setConversations] = useState([]);
     const [runCount, setRunCount] = useState(0);
 
@@ -35,6 +35,12 @@ const MessagesPage = () => {
         }
 
     const selectConversation = (email) => {
+        var loginEmail = localStorage.getItem('loggedInEmail');
+        var selectedConversationTemp = (messagesRepo.filter((message) => 
+        (message.sender === loginEmail && message.receiver === email) || (message.sender === email && message.receiver === loginEmail)));
+
+        const sorted = selectedConversationTemp.sort((a, b) => Date.parse(a.date) > Date.parse(b.date) ? 1 : -1);
+        setSelectedConversation(sorted);
 
     }
 
@@ -99,12 +105,12 @@ const MessagesPage = () => {
 
                 <div className='messageScreen'>
                     <div className='messagesContainer'>
-                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <p className='messageTextLeft'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <p className='messageTextLeft'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <p className='messageTextRight'>joe joe joe joaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        {selectedConversation.map((sc) => (
+                            <ConversationMessages
+                                receiver={sc.receiver}
+                                text={sc.text}
+                            />
+                        ))}
                     </div>
 
                     <input className='messagesInput' 
