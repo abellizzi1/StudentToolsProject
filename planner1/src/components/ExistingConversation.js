@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {Link} from "react-router-dom";
 import '../pages/MessagesPage.css';
 
-const ExistingConversation = ({  }) => {
+const ExistingConversation = ({ conversationName, conversationEmail, handleSelectConversation }) => {
 	
     /*
     Display all buttons (ExistingConversations) on the left side of Messages screen.
@@ -12,7 +12,7 @@ const ExistingConversation = ({  }) => {
 
     return (
 		<div>
-			
+			  <button className='existingMessageButton'>{conversationName}</button>
 		</div>
 	);
 };
