@@ -96,7 +96,14 @@ const MessagesPage = () => {
             setRunCount(0);
             getRepo();
             selectConversation(selectedConversationEmail);
-            setSelectedConversation([...selectedConversation, messageToSend]);
+            const d = new Date();
+            const nmessageToSend = {
+                sender:localStorage.getItem('loggedInEmail'),
+                receiver:selectedConversationEmail,
+                text:message,
+                date:d.toISOString()
+            }
+            setSelectedConversation([...selectedConversation, nmessageToSend]);
         }
     }
 
