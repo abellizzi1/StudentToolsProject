@@ -13,6 +13,7 @@ const MessagesPage = () => {
     const [usersRepo, setUsersRepo] = useState([]);
     const [messagesRepo, setMessagesRepo] = useState([]);
     const [selectedConversation, setSelectedConversation] = useState([]);
+    const [selectedConversationEmail, setSelectedConversationEmail] = useState('');
     const [conversations, setConversations] = useState([]);
     const [runCount, setRunCount] = useState(0);
 
@@ -36,12 +37,12 @@ const MessagesPage = () => {
 
     const selectConversation = (email) => {
         var loginEmail = localStorage.getItem('loggedInEmail');
+        setSelectedConversationEmail(email);
         var selectedConversationTemp = (messagesRepo.filter((message) => 
         (message.sender === loginEmail && message.receiver === email) || (message.sender === email && message.receiver === loginEmail)));
 
         const sorted = selectedConversationTemp.sort((a, b) => Date.parse(a.date) > Date.parse(b.date) ? 1 : -1);
         setSelectedConversation(sorted);
-
     }
 
     const setConversationsState = () => {
@@ -79,6 +80,26 @@ const MessagesPage = () => {
         setConversations(conversationsArrayTemp);
     }
 
+    const sendMessage = () => {
+        var message = document.getElementById('messageInput').value;
+
+        if (message.length > 0) {
+            const messageToSend = {
+                sender:localStorage.getItem('loggedInEmail'),
+                receiver:selectedConversationEmail,
+                text:message
+            }
+    
+            axios.post('http://localhost:4000/app/messages/create', messageToSend)
+                .then(response => console.log(response.data));
+
+            setRunCount(0);
+            getRepo();
+            selectConversation(selectedConversationEmail);
+            setSelectedConversation([...selectedConversation, messageToSend]);
+        }
+    }
+
     useEffect(() => {
         
         if (conversations.length === 0 && runCount < 5 && localStorage.getItem('loggedInEmail') !== '') {
@@ -104,7 +125,7 @@ const MessagesPage = () => {
                 </div>
 
                 <div className='messageScreen'>
-                    <div className='messagesContainer'>
+                    <div id='msgContainer' className='messagesContainer'>
                         {selectedConversation.map((sc) => (
                             <ConversationMessages
                                 receiver={sc.receiver}
@@ -114,9 +135,9 @@ const MessagesPage = () => {
                     </div>
 
                     <input className='messagesInput' 
-                    type='text' id='emailInput' name='emailInput' 
+                    type='text' id='messageInput' name='messageInput' 
                     placeholder="Enter message here" />
-                    <button className='sendMessageButtonMessages'>Send Message</button>
+                    <button onClick={() => { sendMessage() }} className='sendMessageButtonMessages'>Send Message</button>
                 </div>
             </div>
             
