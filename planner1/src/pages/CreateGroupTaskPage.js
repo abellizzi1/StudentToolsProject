@@ -22,7 +22,15 @@ const CreateGroupTaskPage = () => {
                     <h1 className='groupTaskInformationHeader'>Group Task Information</h1>
                     <h2 className='groupTaskFriendsHeader'>Click on a friend to share the task with them</h2>
                     <div className='createTaskFriendsContent'>
-                        
+                        <button className='groupTasksFriendButtonSelected'>Angelo Belrrinnnnni</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
+                        <button className='groupTasksFriendButton'>Joe</button>
                     </div>
 
                     <textarea

@@ -185,3 +185,59 @@
     margin-bottom:20px;
     margin-top:20px;
   }
+
+  .groupTasksFriendButton {
+	background-color: white;
+	border: none;
+    width:460px;
+	color: rgb(9, 72, 80);
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+	font-weight:bold;
+    cursor:pointer;
+	margin-left: 20px;
+    margin-top:10px;
+    margin-bottom:5px;
+    border-radius: 20px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.groupTasksFriendButton:hover {
+	background-color: rgb(231, 231, 231);
+}
+
+.groupTasksFriendButton:active {
+	background-color: rgb(200, 200, 200);
+}
+
+.groupTasksFriendButtonSelected {
+	background-color: rgb(100, 255, 0);
+	border: none;
+    width:460px;
+	color: rgb(9, 72, 80);
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+	font-weight:bold;
+    cursor:pointer;
+	margin-left: 20px;
+    margin-top:10px;
+    margin-bottom:5px;
+    border-radius: 20px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.groupTasksFriendButtonSelected:hover {
+	background-color: rgb(100, 235, 0);
+}
+
+.groupTasksFriendButtonSelected:active {
+	background-color: rgb(100, 205, 0);
+}

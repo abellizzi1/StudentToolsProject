@@ -3,6 +3,8 @@ const router = express.Router();
 const signUpTemplateCopy = require('../models/SignUpModels');
 const friendsCopy = require('../models/FriendsModel');
 const messageCopy = require('../models/MessageModel');
+const groupTaskCopy = require('../models/GroupTaskModel');
+const groupTaskPostCopy = require('../models/GroupTaskPostModel');
 
 router.post('/users/create', (request, response) =>{
     const signedUpUser = new signUpTemplateCopy({
@@ -71,6 +73,50 @@ router.post('/messages/create', (request, response) =>{
 router.route('/messages/get').get((request, response) =>{
     messageCopy.find()
         .then(foundMessages => response.json(foundMessages))
+})
+
+//////////////////////////////////////////////////////////////
+
+router.post('/groupTasks/create', (request, response) =>{
+    const grouptask = new groupTaskCopy({
+        title:request.body.title,
+        description:request.body.description,
+        group:request.body.group
+    })
+    grouptask.save()
+    .then(data =>{
+        response.json(data)
+    })
+    .catch(error =>{
+        response.json(error)
+    })
+})
+
+router.route('/groupTasks/get').get((request, response) =>{
+    groupTaskCopy.find()
+        .then(foundGroupTasks => response.json(foundGroupTasks))
+})
+
+//////////////////////////////////////////////////////////////
+
+router.post('/groupTaskPosts/create', (request, response) =>{
+    const grouptaskpost = new groupTaskPostCopy({
+        sender:request.body.sender,
+        text:request.body.text,
+        groupTaskId:request.body.groupTaskId
+    })
+    grouptaskpost.save()
+    .then(data =>{
+        response.json(data)
+    })
+    .catch(error =>{
+        response.json(error)
+    })
+})
+
+router.route('/groupTaskPosts/get').get((request, response) =>{
+    groupTaskPostCopy.find()
+        .then(foundGroupTaskPosts => response.json(foundGroupTaskPosts))
 })
 
 module.exports = router;

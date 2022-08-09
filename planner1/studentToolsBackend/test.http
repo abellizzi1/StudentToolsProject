@@ -1,7 +1,8 @@
-DELETE http://localhost:4000/app/friends/remove
+POST http://localhost:4000/app/groupTaskPosts/create
 Content-Type: application/json
 
 {
-    "sender":"test@joe.com",
-    "receiver":"ang@ang.net"
+    "sender":"mm@mm.com",
+    "text":"Test Text",
+    "groupTaskId":"62f29e25c4e6ed75a512c8fa"
 }
