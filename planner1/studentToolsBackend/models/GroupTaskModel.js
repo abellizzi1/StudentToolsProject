@@ -13,6 +13,10 @@ const groupTaskTemplate = new mongoose.Schema({
         type:[String],
         required:true
     },
+    deadline:{
+        type:String,
+        required:true
+    },
     date:{
         type:Date,
         default:Date.now

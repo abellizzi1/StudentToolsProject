@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Note from '../components/Note.js';
 import * as FaIcons from 'react-icons/fa';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import CreateGroupTaskFriend from '../components/CreateGroupTaskFriend';
 import axios from 'axios'
 
@@ -20,6 +20,8 @@ const CreateGroupTaskPage = () => {
     const [friends, setFriends] = useState([]);
     const [groupTaskMembers, setGroupTaskMembers] = useState([]);
     const [runCount, setRunCount] = useState(0);
+
+    const navigate = useNavigate();
 
     const getRepo = () => {
 
@@ -87,6 +89,26 @@ const CreateGroupTaskPage = () => {
             setGroupTaskMembers(newGroupTaskMembers);
         }
 
+        const postGroupTask = () => {
+            const finalGroupTaskMembers = [...groupTaskMembers, localStorage.getItem('loggedInEmail')];
+            setGroupTaskMembers(finalGroupTaskMembers);
+            var tempTitle = document.getElementById('task-title').value;
+            var tempText = document.getElementById('task-text').value;
+            var tempDate = document.getElementById('taskDate').value;
+
+            const newGroupTask = {
+                title:tempTitle,
+                description:tempText,
+                group:finalGroupTaskMembers,
+                deadline:tempDate
+            }
+    
+            axios.post('http://localhost:4000/app/groupTasks/create', newGroupTask)
+                .then(response => console.log(response.data));
+
+            navigate('/group-tasks');
+        }
+
         useEffect(() => {
         
             if (friends.length === 0 && runCount < 5 && localStorage.getItem('loggedInEmail') !== '') {
@@ -135,12 +157,10 @@ const CreateGroupTaskPage = () => {
                         <label className='groupDeadlineLabel' for='taskDate'>Deadline:</label>
                         <input className='groupTaskDateInput' type='date' id='taskDate' name='taskDate' />
                     </form>
-                    <Link to={"/group-tasks"}>
-                        <button 
-                        className='trueCreateGroupTaskButton'>
-                        Create Task
-                        </button>
-                    </Link>
+                    <button onClick={() => { postGroupTask() } }
+                    className='trueCreateGroupTaskButton'>
+                    Create Group Task
+                    </button>
                 </div>
             </div>
             </div>

@@ -81,7 +81,8 @@ router.post('/groupTasks/create', (request, response) =>{
     const grouptask = new groupTaskCopy({
         title:request.body.title,
         description:request.body.description,
-        group:request.body.group
+        group:request.body.group,
+        deadline:request.body.deadline
     })
     grouptask.save()
     .then(data =>{
