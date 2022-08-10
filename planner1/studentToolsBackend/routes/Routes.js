@@ -98,6 +98,11 @@ router.route('/groupTasks/get').get((request, response) =>{
         .then(foundGroupTasks => response.json(foundGroupTasks))
 })
 
+router.route('/groupTasks/put/:id').put((request, response) =>{
+    groupTaskCopy.findByIdAndUpdate(request.params.id, request.body)
+        .then(foundGroupTask => response.json(foundGroupTask))
+})
+
 //////////////////////////////////////////////////////////////
 
 router.post('/groupTaskPosts/create', (request, response) =>{

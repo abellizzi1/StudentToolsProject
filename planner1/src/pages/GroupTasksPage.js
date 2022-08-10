@@ -11,6 +11,7 @@ const GroupTasksPage = () => {
 
     const [groupTasksRepo, setGroupTasksRepo] = useState([]);
     const [groupTasks, setGroupTasks] = useState([]);
+    const [runCount, setRunCount] = useState(0);
 
     const navigate = useNavigate();
 
@@ -51,15 +52,32 @@ const GroupTasksPage = () => {
     }
 
     const closeOnClick = (id) => {
+        var existingGroupTask = groupTasksRepo.filter((groupTask) => (groupTask._id === id));
+        var groupTemp = existingGroupTask[0].group;
+        for (let i = 0; i < groupTemp.length; i++) {
+            if (groupTemp[i] === localStorage.getItem('loggedInEmail')) {
+                groupTemp.splice(i, 1);
+            }
+        }
+        existingGroupTask[0].group = groupTemp;
+        console.log(existingGroupTask[0]);
 
+        axios.put("http://localhost:4000/app/groupTasks/put/" + id, existingGroupTask[0])
+            .then(response => console.log(response.data));
+
+        getRepo();
+        setGroupTasksState();
+        setRunCount(0);
     }
 
     useEffect(() => {
+        if (groupTasks.length === 0 && runCount < 5 && localStorage.getItem('loggedInEmail') !== '') {
+            getRepo();
+            setGroupTasksState();
+            setRunCount(runCount + 1);
+        }
         
-        getRepo();
-        setGroupTasksState();
-        
-    }, []);
+    }, [groupTasksRepo]);
 
     return(
         <div className='content'>
