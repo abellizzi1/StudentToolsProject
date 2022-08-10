@@ -12,7 +12,10 @@ const SelectedGroupTaskPage = () => {
     const [taskDescription, setTaskDescription] = useState('');
     const [taskGroup, setTaskGroup] = useState([]);
     const [taskDeadline, setTaskDeadline] = useState('');
+
+
     const [groupTaskPostsRepo, setGroupTaskPostsRepo] = useState([]);
+    const [usersRepo, setUsersRepo] = useState([]);
     const [groupTaskPosts, setGroupTaskPosts] = useState([]);
     const [runCount, setRunCount] = useState(0);
 
@@ -35,14 +38,32 @@ const SelectedGroupTaskPage = () => {
                 console.log(tempGroupTaskPostsRepo);
                 setGroupTaskPostsRepo(tempGroupTaskPostsRepo);
             });
+
+            axios.get('http://localhost:4000/app/users/get')
+            .then((response) => {
+                const tempUsersRepo = response.data;
+                console.log(tempUsersRepo);
+                setUsersRepo(tempUsersRepo);
+            });
         }
 
         const setGroupTaskPostsState = () => {
             var groupTaskPostsArrayTemp = [];
             var selectedGroupTaskId = localStorage.getItem('selectedGroupTaskId');
-            for (let i = 0; i < groupTaskPostsRepo; i++) {
+            for (let i = 0; i < groupTaskPostsRepo.length; i++) {
                 if (groupTaskPostsRepo[i].groupTaskId === selectedGroupTaskId) {
-                    groupTaskPostsArrayTemp.push(groupTaskPostsRepo[i]);
+                    var nameToAdd = usersRepo.filter((user) => user.email === groupTaskPostsRepo[i].sender);
+
+                    if (nameToAdd.length > 0) {
+                        const newPost = {
+                            name: (nameToAdd[0].firstName + " " + nameToAdd[0].lastName),
+                            sender: groupTaskPostsRepo[i].sender,
+                            text: groupTaskPostsRepo[i].text,
+                            date: groupTaskPostsRepo[i].date
+                        };
+    
+                        groupTaskPostsArrayTemp.push(newPost);
+                    }
                 }
             }
             const sorted = groupTaskPostsArrayTemp.sort((a, b) => Date.parse(a.date) > Date.parse(b.date) ? -1 : 1);
@@ -66,8 +87,11 @@ const SelectedGroupTaskPage = () => {
             setRunCount(0);
             getRepo();
             setGroupTaskPostsState();
+
             const d = new Date();
+            var nameToAdd = usersRepo.filter((user) => user.email === tempSender);
             const npostToSend = {
+                name:(nameToAdd[0].firstName + " " + nameToAdd[0].lastName),
                 sender:tempSender,
                 text:tempText,
                 groupTaskId:selectedGroupTaskId,
@@ -112,21 +136,14 @@ const SelectedGroupTaskPage = () => {
                         placeholder='Type to create a post...'
                     ></textarea>
                     <button onClick={() =>{ createPost() } } className='groupTaskInfoCreatePostButton'>Create Post</button>
-                    <div className='groupTaskInfoPostBorder'>
-                        <h3 className='groupTaskInfoPostName'>Angelo beeenononnn</h3>
-                        <p className='groupTaskInfoPostDate'>08/11/22</p>
-                        <p className='groupTaskInfoPosts'>This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post </p>
-                    </div>
-                    <div className='groupTaskInfoPostBorder'>
-                        <h3 className='groupTaskInfoPostName'>Angelo beeenononnn</h3>
-                        <p className='groupTaskInfoPostDate'>08/11/22</p>
-                        <p className='groupTaskInfoPosts'>This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post </p>
-                    </div>
-                    <div className='groupTaskInfoPostBorder'>
-                        <h3 className='groupTaskInfoPostName'>Angelo beeenononnn</h3>
-                        <p className='groupTaskInfoPostDate'>08/11/22</p>
-                        <p className='groupTaskInfoPosts'>This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post This is a post </p>
-                    </div>
+                    
+                    {groupTaskPosts.map((groupTaskPost) => (
+                        <GroupTaskPost
+                            name={groupTaskPost.name}
+                            date={groupTaskPost.date} 
+                            text={groupTaskPost.text}
+                        />
+                    ))}
 
                     <Link to={'/group-tasks'}>
                         <button className='groupTaskInfoBackButton'>Back to Group Tasks</button>
