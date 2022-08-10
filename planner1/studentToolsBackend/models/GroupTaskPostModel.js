@@ -10,7 +10,7 @@ const groupTaskPostTemplate = new mongoose.Schema({
         required:true
     },
     groupTaskId:{
-        type:mongoose.Schema.Types.ObjectId,
+        type:String,
         required:true
     },
     date:{

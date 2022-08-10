@@ -318,7 +318,7 @@
     text-decoration: none;
     font-size: 25px;
     cursor:pointer;
-	margin-left: 325px;
+	margin-left: 315px;
     border-radius: 10px;
 	transition-timing-function: ease-out;
 	transition: 0.2s;
@@ -332,5 +332,52 @@
 }
 
 .groupTaskInfoBackButton:active {
+	background-color: rgb(6, 86, 97);
+}
+
+.groupTaskInfoCreatePostText {
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
+	resize: none;
+	border-radius:20px;
+	font-size:20px;
+	padding-top:10px;
+	padding-left:10px;
+	margin-left:30px;
+	margin-bottom:20px;
+	width:840px;
+	height:130px;
+	color:black;
+	overflow-wrap:break-word;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+  }
+
+  .groupTaskInfoCreatePostText:hover {
+	background-color:rgb(243, 243, 243);
+  }
+
+  .groupTaskInfoCreatePostButton {
+	background-color: rgb(6, 155, 175);
+	border: none;
+	color: white;
+	padding: 9px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    cursor:pointer;
+	margin-left: 360px;
+    border-radius: 10px;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+	margin-top:-10px;
+	margin-bottom:40px;
+  }
+
+.groupTaskInfoCreatePostButton:hover {
+	background-color: rgb(6, 121, 136);
+}
+
+.groupTaskInfoCreatePostButton:active {
 	background-color: rgb(6, 86, 97);
 }

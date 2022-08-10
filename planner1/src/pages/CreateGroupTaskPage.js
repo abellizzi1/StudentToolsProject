@@ -107,6 +107,7 @@ const CreateGroupTaskPage = () => {
                 .then(response => console.log(response.data));
 
             navigate('/group-tasks');
+            window.location.reload();
         }
 
         useEffect(() => {
