@@ -48,6 +48,7 @@ const GroupTasksPage = () => {
     }
 
     const viewMoreOnClick = (id) => {
+        localStorage.setItem('selectedGroupTaskId', id);
         navigate('/group-tasks/selected-group-task');
     }
 
