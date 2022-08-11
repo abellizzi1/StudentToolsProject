@@ -12,6 +12,8 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import MessagesPage from './pages/MessagesPage';
 import StartConversationPage from './pages/StartConversationPage';
+import SelectedGroupTaskPage from './pages/SelectedGroupTaskPage'
+import CreateGroupTaskPage from './pages/CreateGroupTaskPage'
 
 function App() {
   
@@ -43,8 +45,10 @@ function App() {
           <Route path = '/tasks' exact element = {<TasksPage />} />
           <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />
           <Route path = '/group-tasks' exact element = {<GroupTasksPage />} />
+          <Route path = '/group-tasks/selected-group-task' exact element = {<SelectedGroupTaskPage />} />
+          <Route path = '/group-tasks/create-group-task' exact element = {<CreateGroupTaskPage />} />
           <Route path = '/register' exact element = {<RegisterPage handleSetLoggedIn={setIsLoggedIn} />} />
-          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />'
+          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />
         </Routes>
       </Router>
     </>

@@ -1,7 +1,0 @@
-DELETE http://localhost:4000/app/friends/remove
-Content-Type: application/json
-
-{
-    "sender":"test@joe.com",
-    "receiver":"ang@ang.net"
-}
