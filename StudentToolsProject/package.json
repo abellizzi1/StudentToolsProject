@@ -1,7 +1,8 @@
 {
-  "name": "planner1",
+  "name": "StudentToolsProject",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://abellizzi1.github.io/StudentToolsProject",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -11,6 +12,7 @@
     "bootstrap": "^5.2.0",
     "buffer": "^6.0.3",
     "dayjs": "^1.11.4",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-edit-text": "^5.0.2",
@@ -21,6 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

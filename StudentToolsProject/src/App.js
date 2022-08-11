@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <Router>
+    <Router>
         <Sidebar isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
         <Routes>
           <Route path = '/' exact element = {<NotesPage />} />
