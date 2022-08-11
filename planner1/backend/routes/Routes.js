@@ -27,6 +27,11 @@ router.route('/users/get').get((request, response) =>{
         .then(foundUsers => response.json(foundUsers))
 })
 
+router.route('/users/put/:id').put((request, response) =>{
+    signUpTemplateCopy.findByIdAndUpdate(request.params.id, request.body)
+        .then(foundUser => response.json(foundUser))
+})
+
 //////////////////////////////////////////////////////////////
 
 router.post('/friends/create', (request, response) =>{
