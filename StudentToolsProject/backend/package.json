@@ -8,7 +8,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "start": "nodemon Server.js"
+    "start": "nodemon Server.js",
+    "heroku-postbuild":"cd .. && npm run build"
   },
   "author": "Angelo Bellizzi",
   "license": "ISC",

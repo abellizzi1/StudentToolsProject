@@ -37,7 +37,7 @@ function App() {
     <Router>
         <Sidebar isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route path = '/StudentToolsProject' exact element = {<NotesPage />} />
+          <Route path = '/StudentToolsProject/' exact element = {<NotesPage />} />
           <Route path = '/StudentToolsProject/profile' exact element = {<ProfilePage />} />
           <Route path = '/StudentToolsProject/friends' exact element = {<FriendsPage isLoggedIn={loggedIn} />} />
           <Route path = '/StudentToolsProject/messages' exact element = {<MessagesPage />} />

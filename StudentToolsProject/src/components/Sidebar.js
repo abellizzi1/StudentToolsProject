@@ -15,7 +15,7 @@ const Sidebar = ({ isLoggedIn, handleSetLoggedIn }) => {
 
   if (currPageElement !== null) {
     switch (window.location.pathname) {
-      case '/StudentToolsProject':
+      case '/StudentToolsProject/':
         currPageElement.textContent = 'Notes';
         break;
       case '/StudentToolsProject/profile':
