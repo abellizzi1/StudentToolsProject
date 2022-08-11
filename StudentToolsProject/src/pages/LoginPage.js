@@ -29,7 +29,7 @@ const LoginPage = ({ handleSetLoggedIn }) => {
         var acc = repo.filter((user) => user.email === tempEmail);
         if (acc.length > 0 && acc[0].password === tempPassword)
         {
-            navigate('/');
+            navigate('/StudentToolsProject');
             handleSetLoggedIn(true);
             localStorage.setItem('loggedInEmail', tempEmail);
             window.location.reload();
@@ -53,7 +53,7 @@ const LoginPage = ({ handleSetLoggedIn }) => {
                         </form>
                         <p className='errorMessage' id='msg'></p>
                         <button className='loginButton' onClick={submitData} id='loginButton'>Login</button>
-                        <Link to={"/register"}>
+                        <Link to={"/StudentToolsProject/register"}>
                             <button className='registerButton' id='toRegisterButton'>
                                 Register
                             </button>

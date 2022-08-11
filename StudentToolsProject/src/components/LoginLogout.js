@@ -9,7 +9,7 @@ const LoginLogout = ({ isLoggedIn, handleSetLoggedIn }) => {
     }
     else {
         return (
-            <Link to={"/login"}>
+            <Link to={"/StudentToolsProject/login"}>
                 <button className='loginRegButton'>Login/Register</button>
               </Link>
         );

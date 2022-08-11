@@ -55,7 +55,7 @@ const CreateTaskPage = () => {
                             <label className='deadlineLabel' for='taskDate'>Deadline:</label>
                             <input className='taskDateInput' type='date' id='taskDate' name='taskDate' />
                         </form>
-                        <Link to={"/tasks"}>
+                        <Link to={"/StudentToolsProject/tasks"}>
                             <button 
                             onClick={addTask}
                             className='trueCreateTaskButton'>

@@ -37,18 +37,18 @@ function App() {
     <Router>
         <Sidebar isLoggedIn={loggedIn} handleSetLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route path = '/' exact element = {<NotesPage />} />
-          <Route path = '/profile' exact element = {<ProfilePage />} />
-          <Route path = '/friends' exact element = {<FriendsPage isLoggedIn={loggedIn} />} />
-          <Route path = '/messages' exact element = {<MessagesPage />} />
-          <Route path = '/start-conversation' exact element = {<StartConversationPage />} />
-          <Route path = '/tasks' exact element = {<TasksPage />} />
-          <Route path = '/tasks/create-task' exact element = {<CreateTaskPage />} />
-          <Route path = '/group-tasks' exact element = {<GroupTasksPage />} />
-          <Route path = '/group-tasks/selected-group-task' exact element = {<SelectedGroupTaskPage />} />
-          <Route path = '/group-tasks/create-group-task' exact element = {<CreateGroupTaskPage />} />
-          <Route path = '/register' exact element = {<RegisterPage handleSetLoggedIn={setIsLoggedIn} />} />
-          <Route path = '/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />
+          <Route path = '/StudentToolsProject' exact element = {<NotesPage />} />
+          <Route path = '/StudentToolsProject/profile' exact element = {<ProfilePage />} />
+          <Route path = '/StudentToolsProject/friends' exact element = {<FriendsPage isLoggedIn={loggedIn} />} />
+          <Route path = '/StudentToolsProject/messages' exact element = {<MessagesPage />} />
+          <Route path = '/StudentToolsProject/start-conversation' exact element = {<StartConversationPage />} />
+          <Route path = '/StudentToolsProject/tasks' exact element = {<TasksPage />} />
+          <Route path = '/StudentToolsProject/tasks/create-task' exact element = {<CreateTaskPage />} />
+          <Route path = '/StudentToolsProject/group-tasks' exact element = {<GroupTasksPage />} />
+          <Route path = '/StudentToolsProject/group-tasks/selected-group-task' exact element = {<SelectedGroupTaskPage />} />
+          <Route path = '/StudentToolsProject/group-tasks/create-group-task' exact element = {<CreateGroupTaskPage />} />
+          <Route path = '/StudentToolsProject/register' exact element = {<RegisterPage handleSetLoggedIn={setIsLoggedIn} />} />
+          <Route path = '/StudentToolsProject/login' exact element = {<LoginPage handleSetLoggedIn={setIsLoggedIn} />} />
         </Routes>
       </Router>
     </>

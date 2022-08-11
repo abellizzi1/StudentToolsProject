@@ -29,7 +29,7 @@ const GroupTasksPage = () => {
             document.getElementById('msg').textContent = 'Must be logged in.';
         }
         else {
-            navigate('/group-tasks/create-group-task');
+            navigate('/StudentToolsProject/group-tasks/create-group-task');
         }
     }
 
@@ -47,7 +47,7 @@ const GroupTasksPage = () => {
 
     const viewMoreOnClick = (id) => {
         localStorage.setItem('selectedGroupTaskId', id);
-        navigate('/group-tasks/selected-group-task');
+        navigate('/StudentToolsProject/group-tasks/selected-group-task');
     }
 
     const closeOnClick = (id) => {

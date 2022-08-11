@@ -23,7 +23,7 @@ const StartConversationPage = () => {
             axios.post('http://localhost:4000/app/messages/create', messageToSend)
                 .then(response => console.log(response.data));
     
-            navigate('/messages');
+            navigate('/StudentToolsProject/messages');
         }
     }
 

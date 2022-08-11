@@ -7,7 +7,7 @@ const Friend = ({ friendName, friendEmail, handleRemoveFriend }) => {
 		<div className='friendBox'>
 			<h3 id='friendName' className='friendBoxInfo'>Name: {friendName}</h3>
 			<h3 id='friendEmail' className='friendBoxInfo'>Email: {friendEmail}</h3>
-			<Link to={"/start-conversation"}>
+			<Link to={"/StudentToolsProject/start-conversation"}>
 				<button onClick={() => { localStorage.setItem('startMsgToName', friendName); localStorage.setItem('startMsgToEmail', friendEmail) } } 
 				className='sendMessageButton'>Send Message</button>
 			</Link>

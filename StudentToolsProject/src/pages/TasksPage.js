@@ -43,7 +43,7 @@ const TasksPage = () => {
 
     return(
             <div className='content'>
-                <Link to={"/tasks/create-task"}>
+                <Link to={"/StudentToolsProject/tasks/create-task"}>
                     <button 
                     className='addTaskButton'>
                     {<FaIcons.FaPen />} Create Task

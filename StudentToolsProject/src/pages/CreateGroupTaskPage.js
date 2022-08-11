@@ -103,7 +103,7 @@ const CreateGroupTaskPage = () => {
             axios.post('http://localhost:4000/app/groupTasks/create', newGroupTask)
                 .then(response => console.log(response.data));
 
-            navigate('/group-tasks');
+            navigate('/StudentToolsProject/group-tasks');
             window.location.reload();
         }
 

@@ -111,7 +111,7 @@ const SelectedGroupTaskPage = () => {
         <div className='content'>
             <div className='createTaskContent'>
                 <div className='groupTaskInfoBox'>
-                    <Link to={'/group-tasks'}>
+                    <Link to={'/StudentToolsProject/group-tasks'}>
                         <button className='groupTaskInfoBackButton'>Back to Group Tasks</button>
                     </Link>
 
@@ -143,7 +143,7 @@ const SelectedGroupTaskPage = () => {
                         />
                     ))}
 
-                    <Link to={'/group-tasks'}>
+                    <Link to={'/StudentToolsProject/group-tasks'}>
                         <button className='groupTaskInfoBackButton'>Back to Group Tasks</button>
                     </Link>
                 </div> 

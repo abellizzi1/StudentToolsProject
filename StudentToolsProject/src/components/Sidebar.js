@@ -15,32 +15,32 @@ const Sidebar = ({ isLoggedIn, handleSetLoggedIn }) => {
 
   if (currPageElement !== null) {
     switch (window.location.pathname) {
-      case '/':
+      case '/StudentToolsProject':
         currPageElement.textContent = 'Notes';
         break;
-      case '/profile':
+      case '/StudentToolsProject/profile':
         currPageElement.textContent = 'Profile';
         break;
-      case '/friends':
-      case '/start-conversation':
+      case '/StudentToolsProject/friends':
+      case '/StudentToolsProject/start-conversation':
         currPageElement.textContent = 'Friends';
         break;
-      case '/messages':
+      case '/StudentToolsProject/messages':
         currPageElement.textContent = 'Messages';
         break;
-      case '/tasks':
-      case '/tasks/create-task':
+      case '/StudentToolsProject/tasks':
+      case '/StudentToolsProject/tasks/create-task':
         currPageElement.textContent = 'Tasks';
         break;
-      case '/group-tasks':
-      case '/group-tasks/selected-group-task':
-      case '/group-tasks/create-group-task':
+      case '/StudentToolsProject/group-tasks':
+      case '/StudentToolsProject/group-tasks/selected-group-task':
+      case '/StudentToolsProject/group-tasks/create-group-task':
         currPageElement.textContent = 'Group Tasks';
         break;
-      case '/register':
+      case '/StudentToolsProject/register':
         currPageElement.textContent = 'Register';
         break;
-      case '/login':
+      case '/StudentToolsProject/login':
         currPageElement.textContent = 'Login';
         break;
       default:

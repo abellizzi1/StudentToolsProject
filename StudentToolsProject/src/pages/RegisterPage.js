@@ -63,7 +63,7 @@ const RegisterPage = ({ handleSetLoggedIn }) => {
             axios.post('http://localhost:4000/app/users/create', registered)
                 .then(response => console.log(response.data));
     
-            navigate('/');
+            navigate('/StudentToolsProject');
             handleSetLoggedIn(true);
             localStorage.setItem('loggedInEmail', tempEmail);
             window.location.reload();
