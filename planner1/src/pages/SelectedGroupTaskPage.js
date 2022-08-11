@@ -1,8 +1,6 @@
 import './GroupTasksPage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import GroupTaskPost from '../components/GroupTaskPost.js';
-import * as FaIcons from 'react-icons/fa';
 import {Link} from "react-router-dom";
 import axios from 'axios';
 

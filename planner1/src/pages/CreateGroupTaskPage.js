@@ -1,9 +1,6 @@
 import './GroupTasksPage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
-import * as FaIcons from 'react-icons/fa';
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import CreateGroupTaskFriend from '../components/CreateGroupTaskFriend';
 import axios from 'axios'
 

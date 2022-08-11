@@ -1,8 +1,4 @@
 import './MessagesPage.css';
-import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
-import * as FaIcons from 'react-icons/fa';
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 

@@ -1,7 +1,6 @@
 import './TasksPage.css';
 import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
 import Task from '../components/Task';
 

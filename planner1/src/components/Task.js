@@ -1,5 +1,4 @@
 import * as FaIcons from 'react-icons/fa';
-import { useState, useEffect } from 'react';
 
 const Task = ({ id, titleText, bodyText, date, handleDeleteTask }) => {
 	

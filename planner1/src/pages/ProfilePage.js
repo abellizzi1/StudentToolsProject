@@ -1,8 +1,5 @@
 import './ProfilePage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
-import * as FaIcons from 'react-icons/fa';
 import axios from 'axios'
 
 const ProfilePage = () => {

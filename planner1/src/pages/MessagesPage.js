@@ -1,9 +1,5 @@
 import './MessagesPage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
-import Note from '../components/Note.js';
-import * as FaIcons from 'react-icons/fa';
-import {Link} from "react-router-dom";
 import ExistingConversation from '../components/ExistingConversation.js';
 import ConversationMessages from '../components/ConversationMessages.js';
 import axios from 'axios';

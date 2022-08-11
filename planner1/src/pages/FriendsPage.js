@@ -1,8 +1,6 @@
 import './FriendsPage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import * as FaIcons from 'react-icons/fa';
-import {Link} from "react-router-dom";
 import axios from 'axios'
 import Friend from '../components/Friend.js';
 

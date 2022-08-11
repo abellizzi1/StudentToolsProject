@@ -1,9 +1,6 @@
 import './RegisterPage.css';
 import { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
 import {Link, useNavigate} from "react-router-dom";
-import Note from '../components/Note.js';
-import * as FaIcons from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
