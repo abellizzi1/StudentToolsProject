@@ -11,6 +11,7 @@ const ProfilePage = () => {
     const [mainUser, setMainUser] = useState(null);
     const [usersRepo, setUsersRepo] = useState([]);
     const [runCount, setRunCount] = useState(0);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const getRepo = () => {
 
@@ -69,6 +70,9 @@ const ProfilePage = () => {
             getRepo();
             setRunCount(runCount + 1);
         }
+        else if (localStorage.getItem('loggedInEmail') === '') {
+            setErrorMessage("Must be logged in");
+        }
         
     }, [usersRepo]);
 
@@ -97,6 +101,7 @@ const ProfilePage = () => {
                         type='password' id='passwordInput' name='passwordInput' 
                         placeholder="Enter new password here" />
                         <button onClick={() => { changePassword() } } className='profileSubmitButton'>Change Password</button>
+                        <p className='errorMessageProfile' id='msg'>{errorMessage}</p>
                     </div>
                 </div>
             </div>
