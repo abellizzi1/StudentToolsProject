@@ -34,7 +34,8 @@
     display: inline-block;
     font-size: 25px;
     cursor:pointer;
-	margin-left:259px;
+	margin-left:50%;
+	transform: translate(-50%, -50%);
     border-radius: 10px;
 	vertical-align: top;
 	transition-timing-function: ease-out;
@@ -62,12 +63,13 @@
     display: inline-block;
     font-size: 25px;
     cursor:pointer;
-	margin-left:272px;
+	margin-left:50%;
+	transform: translate(-50%, -50%);
     border-radius: 10px;
 	vertical-align: top;
 	transition-timing-function: ease-out;
 	transition: 0.2s;
-	margin-top:20px;
+	margin-top:50px;
   }
 
 .loginButton:hover {
@@ -130,4 +132,38 @@
 	font-weight:bold;
 	font-size:21px;
 	overflow-wrap:break-word;
+}
+
+@media (max-width: 768px) {
+	.loginBox {
+		width:90%;
+		height:90%;
+	}
+
+	.registerButton {
+		margin-top: 20px;
+		margin-bottom:30px;
+	}
+
+	.loginButton {
+		margin-top:15%;
+	}
+	
+	.emailInput {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:5%;
+	}
+
+	.passwordInput {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:5%;
+	}
+
+	.registerLabels {
+		margin-top:15%;
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+	}
 }

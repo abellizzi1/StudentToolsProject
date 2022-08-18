@@ -69,3 +69,32 @@
 	text-align: center;
 	padding-top:10px;
 }
+
+@media (max-width: 768px) {
+	.profileSubmitButton {
+		position:relative;
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:20px;
+		font-size:20px;
+	}
+
+	.profileNameInput {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		font-size:20px;
+	}
+
+	.profileBox {
+		height:80%;
+		width:90%;
+	}
+
+	.profileNameInput {
+		width:320px
+	}
+
+	.profileHeader {
+		font-size:25px;
+	}
+}
