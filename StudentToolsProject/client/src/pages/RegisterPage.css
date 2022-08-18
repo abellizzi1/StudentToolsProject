@@ -162,8 +162,25 @@
 	}
 
 	.registerLabels {
-		margin-top:15%;
+		margin-top:10%;
 		margin-left:50%;
 		transform: translate(-50%, -50%);
+	}
+
+	.registerBox {
+		width:90%;
+		height:90%;
+	}
+
+	.firstNameInput {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:5%;
+	}
+	
+	.lastNameInput {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:5%;
 	}
 }
