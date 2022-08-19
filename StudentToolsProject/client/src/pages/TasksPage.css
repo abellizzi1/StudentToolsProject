@@ -7,6 +7,7 @@
 	animation: animate 60s ease infinite;
 	position:absolute;
 	overflow:auto;
+	overflow-x:hidden;
 }
 
 @keyframes animate {
@@ -350,5 +351,64 @@
 	.taskText {
 		font-size:20px;
 		width:95%;
+	}
+
+	.createTaskBox {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+		margin-top:370px;
+		height:700px;
+		position:absolute;
+	}
+
+	.taskInformationHeader {
+		margin-right:unset;
+		margin-left:unset;
+		text-align: center;
+		width:90%;
+		margin-top:20px;
+	}
+
+	.createTaskContent{
+		display:unset;
+	}
+
+	.inputTaskTitle {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+		font-size:18px;
+		margin-top:40px;
+	}
+
+	.inputTaskText {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+		margin-top:130px;
+		font-size:15px;
+	}
+
+	.taskDateInput {
+		margin-left:10px;
+		font-size:20px;
+		margin-top:-12px;
+	}
+
+	.deadlineLabel {
+		margin-left:20px;
+		font-size:22px;
+	}
+
+	.dateFormTasks {
+		margin-top:-100px;
+	}
+
+	.trueCreateTaskButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		font-size:22px;
+		width:170px;
 	}
 }

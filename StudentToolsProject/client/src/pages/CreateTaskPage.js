@@ -51,7 +51,7 @@ const CreateTaskPage = () => {
                             cols='10'
                             placeholder='Type to add a description...'
                         ></textarea>
-                        <form>
+                        <form className='dateFormTasks'>
                             <label className='deadlineLabel' for='taskDate'>Deadline:</label>
                             <input className='taskDateInput' type='date' id='taskDate' name='taskDate' />
                         </form>
