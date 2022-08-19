@@ -82,6 +82,34 @@
 	padding: 2px 17px;
 }
 
+.deleteAllButton {
+	background-color: transparent;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+    margin-top: 10px;
+	margin-left: 30px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.deleteAllButton:hover {
+	background-color: white;
+	color: black;
+	
+}
+
+.deleteAllButton:active {
+	padding: 2px 17px;
+}
+
 .inputNote {
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	padding-top:5px;
@@ -141,3 +169,34 @@
     background-color: white;
 	color: black;
   }
+
+  @media (max-width: 768px) {
+	.addNoteButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:50px;
+		margin-bottom:10px;
+		background-color: white;
+		color:black;
+		width:180px;
+	}
+
+	.deleteAllButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		color:black;
+		margin-bottom:200px;
+		width:180px;
+	}
+
+	.notes {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+	}
+
+	.note-toolbar {
+		width:100%;
+	}
+}

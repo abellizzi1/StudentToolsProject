@@ -69,7 +69,7 @@ const NotesPage = () => {
     return(
             <div className='content'>
                 <button onClick={addNote} className='addNoteButton'>{<FaIcons.FaPlusCircle />} Add Note</button>
-                <button onClick={deleteAllNotes} className='addNoteButton'>{<FaIcons.FaTrash />} Delete All</button>
+                <button onClick={deleteAllNotes} className='deleteAllButton'>{<FaIcons.FaTrash />} Delete All</button>
 				<div>
 					{notes.map((note) => (
 						<Note

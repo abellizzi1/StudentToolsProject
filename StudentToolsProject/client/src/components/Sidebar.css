@@ -174,8 +174,24 @@
 
 
   @media (max-width: 768px) {
+
     .sidebar-text a {
       background-color: #1a83ff;
     }
-    
+
+    .logoutButton {
+      background-color: white;
+      color:black;
+    }
+
+    .loginRegButton {
+      background-color: white;
+      color:black;
+      padding: 2px 5px;
+      margin-top:-5%;
+    }
+
+    .sidebarHeader {
+      margin-top:4%;
+    }
   }
