@@ -317,6 +317,12 @@
 		width:200px;
 	}
 
+	.addTaskButton:active {
+		background-color: rgb(230, 230, 230);
+		padding: 5px 20px;
+		margin-top:40px;
+	}
+
 	.deleteAllButtonTasks {
 		margin-left:50%;
 		transform: translate(-50%, -50%);
@@ -325,6 +331,12 @@
 		margin-top:20px;
 		width:200px;
 		margin-bottom:300px;
+	}
+
+	.deleteAllButtonTasks:active {
+		background-color: rgb(230, 230, 230);
+		padding: 5px 20px;
+		margin-top:20px;
 	}
 
 	.task {
@@ -340,6 +352,13 @@
 	.taskCloseButton {
 		margin-left:auto;
 		margin-right:0;
+	}
+
+	.taskCloseButton:active {
+		margin-left:auto;
+		margin-right:0;
+		font-size:2rem;
+		color:rgb(210, 210, 210);
 	}
 
 	.taskTitle {
@@ -410,5 +429,12 @@
 		transform: translate(-50%, -50%);
 		font-size:22px;
 		width:170px;
+	}
+
+	.trueCreateTaskButton:active {
+		background-color: rgb(4, 89, 100);
+		padding: 9px 24px;
+		margin-top: 60px;
+		margin-left:50%;
 	}
 }

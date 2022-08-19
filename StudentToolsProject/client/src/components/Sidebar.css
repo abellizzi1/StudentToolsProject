@@ -195,6 +195,18 @@
       font-size:22px;
     }
 
+    .logoutButton:active {
+      padding: 2px 5px;
+      background-color: rgb(230, 230, 230);
+      margin-top:-15px;
+    }
+
+    .loginRegButton:active {
+      padding: 2px 5px;
+      background-color: rgb(230, 230, 230);
+      margin-top:-15px;
+    }
+
     .sidebarHeader {
       margin-top:10px;
       font-size:25px;
