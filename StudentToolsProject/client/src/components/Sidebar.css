@@ -182,16 +182,21 @@
     .logoutButton {
       background-color: white;
       color:black;
+      padding: 2px 5px;
+      margin-top:-15px;
+      font-size:22px;
     }
 
     .loginRegButton {
       background-color: white;
       color:black;
       padding: 2px 5px;
-      margin-top:-5%;
+      margin-top:-15px;
+      font-size:22px;
     }
 
     .sidebarHeader {
-      margin-top:4%;
+      margin-top:10px;
+      font-size:25px;
     }
   }

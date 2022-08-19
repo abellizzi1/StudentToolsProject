@@ -233,3 +233,82 @@
     position:absolute;
     margin-top: 350px;
 }
+
+@media (max-width: 768px) {
+
+    .messagesHeader {
+        font-size:22px;
+    }
+
+    .existingMessagesContent {
+        position:absolute;
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        height:250px;
+        width:90%;
+        margin-top:150px;
+    }
+
+    .messagesContainer {
+        width:95%;
+        height:280px;
+    }
+
+    .messageScreen {
+        position:absolute;
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        height:420px;
+        width:90%;
+        margin-top:500px;
+    }
+
+    .messagesContent {
+        align-items:unset;
+        justify-content: unset;
+      }
+
+      .messagesInput { 
+        width:315px;
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        margin-bottom:35px;
+      }
+
+      .sendMessageButtonMessages {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        margin-bottom:-25px;
+        width:200px;
+      }
+
+      .existingMessageButton {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        margin-top:30px;
+        margin-bottom:-15px;
+      }
+
+      .messageTextLeft {
+        width:200px;
+        font-size:17px;
+        margin-left:5px;
+      }
+      
+      .messageDateLeft {
+        margin-left:10px;
+        width:130px;
+      }
+
+      .messageTextRight {
+        width:200px;
+        font-size:17px;
+        margin-right:10px;
+        margin-left:auto;
+      }
+
+      .messageDateRight {
+        margin-left:55%;
+        width:130px;
+      }
+}

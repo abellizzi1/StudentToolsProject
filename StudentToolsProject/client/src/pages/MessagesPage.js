@@ -136,6 +136,7 @@ const MessagesPage = () => {
                                 date={sc.date}
                             />
                         ))}
+        
                     </div>
 
                     <input className='messagesInput' 

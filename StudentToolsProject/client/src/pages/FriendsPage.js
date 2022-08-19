@@ -154,28 +154,6 @@ const FriendsPage = ({ isLoggedIn }) => {
                         handleRemoveFriend={removeFriend}
                     />
                 ))}
-
-                <div className='friendBox'>
-                    <h3 id='friendName' className='friendBoxInfo'>Name: Angelo Bellizzi</h3>
-                    <h3 id='friendEmail' className='friendBoxInfo'>Email: riow@jiwoearj.com</h3>
-                        <button 
-                        className='sendMessageButton'>Send Message</button>
-                    <button className='friendRemoveButton'>Remove</button>
-                </div>
-                <div className='friendBox'>
-                    <h3 id='friendName' className='friendBoxInfo'>Name: Angelo Bellizzi</h3>
-                    <h3 id='friendEmail' className='friendBoxInfo'>Email: riow@jiwoearj.com</h3>
-                        <button 
-                        className='sendMessageButton'>Send Message</button>
-                    <button className='friendRemoveButton'>Remove</button>
-                </div>
-                <div className='friendBox'>
-                    <h3 id='friendName' className='friendBoxInfo'>Name: Angelo Bellizzi</h3>
-                    <h3 id='friendEmail' className='friendBoxInfo'>Email: riow@jiwoearj.com</h3>
-                        <button 
-                        className='sendMessageButton'>Send Message</button>
-                    <button className='friendRemoveButton'>Remove</button>
-                </div>
             </div>
         </div>
     )
