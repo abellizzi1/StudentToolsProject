@@ -311,4 +311,25 @@
         margin-left:55%;
         width:130px;
       }
+
+      .startConversationHeader {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        margin-top:40px;
+        font-size:25px;
+      }
+
+      .startConversationInput {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        width:90%;
+        margin-top:20px;
+      }
+
+      .sendButtonStartConversation {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+        margin-top:90px;
+        width:200px;
+      }
 }
