@@ -276,3 +276,79 @@
   .taskCloseButton:hover {
     color: rgb(212, 212, 212);
   }
+
+  .deleteAllButtonTasks {
+	background-color: transparent;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor:pointer;
+    margin-top: 10px;
+	margin-left: 30px;
+    border-radius: 10px;
+	vertical-align: top;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+.deleteAllButtonTasks:hover {
+	background-color: white;
+	color: black;
+	
+}
+
+.deleteAllButtonTasks:active {
+	padding: 3px 18px;
+	margin-top:12px;
+}
+
+  @media (max-width: 768px) {
+	.addTaskButton {
+        margin-left:50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		color:black;
+		margin-top:40px;
+		width:200px;
+	}
+
+	.deleteAllButtonTasks {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		color:black;
+		margin-top:20px;
+		width:200px;
+		margin-bottom:300px;
+	}
+
+	.task {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+	}
+
+	.task-toolbar {
+		width:100%;
+	}
+
+	.taskCloseButton {
+		margin-left:auto;
+		margin-right:0;
+	}
+
+	.taskTitle {
+		font-size:25px;
+		width:95%;
+		margin-top:5px;
+	}
+
+	.taskText {
+		font-size:20px;
+		width:95%;
+	}
+}

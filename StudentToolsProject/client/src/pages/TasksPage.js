@@ -49,7 +49,7 @@ const TasksPage = () => {
                     {<FaIcons.FaPen />} Create Task
                     </button>
                 </Link>
-                <button onClick={deleteAllTasks} className='addTaskButton'>{<FaIcons.FaTrash />} Delete All</button>
+                <button onClick={deleteAllTasks} className='deleteAllButtonTasks'>{<FaIcons.FaTrash />} Delete All</button>
 
                 <div>
                     {tasks.map((task) => (
