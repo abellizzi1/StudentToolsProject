@@ -171,3 +171,11 @@
   .logoutButton:active {
     padding: 2px 17px;
   }
+
+
+  @media (max-width: 768px) {
+    .sidebar-text a {
+      background-color: #1a83ff;
+    }
+    
+  }
