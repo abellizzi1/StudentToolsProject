@@ -378,20 +378,22 @@
 		width:90%;
 		margin-top:370px;
 		height:700px;
-		position:absolute;
 	}
 
 	.taskInformationHeader {
 		margin-right:unset;
-		margin-left:unset;
+		margin-left:50%;
+		transform: translate(-50%, -50%);
 		text-align: center;
-		width:90%;
+		width:350px;
 		margin-top:20px;
 	}
 
-	.createTaskContent{
-		display:unset;
+	.createTaskContent {
+		align-items: unset;
+		justify-content: unset;
 	}
+
 
 	.inputTaskTitle {
 		margin-left:50%;

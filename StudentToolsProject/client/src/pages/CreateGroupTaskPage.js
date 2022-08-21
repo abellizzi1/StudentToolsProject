@@ -139,6 +139,7 @@ const CreateGroupTaskPage = () => {
                                 handleRemoveFromGroup={removeFromGroupTask}
                             />
                         ))}
+        
                     </div>
 
                     <textarea
@@ -155,7 +156,7 @@ const CreateGroupTaskPage = () => {
                         cols='10'
                         placeholder='Type to add a description...'
                     ></textarea>
-                    <form>
+                    <form className='groupTaskDeadlineForm'>
                         <label className='groupDeadlineLabel' for='taskDate'>Deadline:</label>
                         <input className='groupTaskDateInput' type='date' id='taskDate' name='taskDate' />
                     </form>

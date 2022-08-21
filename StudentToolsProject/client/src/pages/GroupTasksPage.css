@@ -464,4 +464,77 @@
 		margin-top:40px;
 	}
 
+	.createGroupTaskBox {
+		width:90%;
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:470px;
+		height:900px;
+		position:absolute;
+	}
+
+	.inputGroupTaskTitle {
+		margin-top:300px;
+		width:90%;
+	}
+
+	.inputGroupTaskText {
+		margin-top:400px;
+		width:90%;
+		height:200px;
+	}
+
+	.groupTaskDeadlineForm {
+		margin-top:200px;
+	}
+
+	.groupDeadlineLabel {
+		margin-left:15px;
+		font-size:22px;
+	}
+
+	.groupTaskDateInput {
+		margin-left:10px;
+	}
+
+	.groupTaskFriendsHeader {
+		text-align: center;
+		font-size: 25px;
+		margin-top:20px;
+	}
+
+	.createTaskFriendsContent {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:130px;
+		width:90%;
+		height:250px;
+	}
+
+	.trueCreateGroupTaskButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:60px;
+		font-size:20px;
+		width:250px;
+	}
+
+	.groupTasksFriendButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:270px;
+		font-size:20px;
+		margin-top:30px;
+		margin-bottom:-10px;
+	}
+
+	.groupTasksFriendButtonSelected {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:270px;
+		font-size:20px;
+		margin-top:30px;
+		margin-bottom:-10px;
+	}
+
 }
