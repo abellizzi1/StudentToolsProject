@@ -25,14 +25,12 @@ const CreateGroupTaskPage = () => {
         axios.get('/app/users/get')
             .then((response) => {
                 const tempUsersRepo = response.data;
-                console.log(tempUsersRepo);
                 setUsersRepo(tempUsersRepo);
             });
 
         axios.get('/app/friends/get')
             .then((response) => {
                 const tempFriendsRepo = response.data;
-                console.log(tempFriendsRepo);
                 setFriendsRepo(tempFriendsRepo);
             });
        
@@ -40,15 +38,12 @@ const CreateGroupTaskPage = () => {
 
         const setFriendsState = () => {
             var loginEmail = localStorage.getItem('loggedInEmail');
-            console.log(localStorage.getItem('loggedInEmail'));
-            console.log(friendsRepo);
             var friendsArrayTemp = [];
             for (let i = 0; i < friendsRepo.length-1; i++) {
                 for (let j = i+1; j < friendsRepo.length; j++) {
                     if (friendsRepo[i].receiver === friendsRepo[j].sender 
                     && friendsRepo[i].sender === friendsRepo[j].receiver
                     && (friendsRepo[i].sender === loginEmail || friendsRepo[j].sender === loginEmail)) {
-                        console.log('friend found');
                         var friendToAdd;
                         if (friendsRepo[i].sender === loginEmail)
                         {

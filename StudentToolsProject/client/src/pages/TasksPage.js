@@ -13,7 +13,6 @@ const TasksPage = () => {
         if (savedTasks) {
             setTasks(savedTasks);
         }
-        console.log(localStorage.getItem('allTasksData'));
 	}, []);
 
     const [tasks, setTasks] = useState([

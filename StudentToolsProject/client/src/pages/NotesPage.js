@@ -13,7 +13,6 @@ const NotesPage = () => {
 		if (savedNotes) {
 			setNotes(savedNotes);
 		}
-		console.log(localStorage.getItem('allNotesData'));
 	}, []);
 
 	const [notes, setNotes] = useState([]);

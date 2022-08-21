@@ -10,22 +10,13 @@ const LoginPage = ({ handleSetLoggedIn }) => {
     const navigate = useNavigate();
 
     const getRepo = () => {
-        try {
             axios.get("/app/users/get")
             .then((response) => {
                 const myRepo = response.data;
                 setRepo(myRepo);
             }
             );
-        }
-    catch (error)  {
-        if (!error.response) {
-            // network error
-            console.log('Error: Network Error');
-        } else {
-            console.log(error.response.data.message);
-        }
-    }
+        
     }
 
     useEffect(() => {

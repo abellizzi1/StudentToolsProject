@@ -22,7 +22,6 @@ const SelectedGroupTaskPage = () => {
         axios.get('/app/groupTasks/get')
             .then((response) => {
                 const tempGroupTasksRepo = response.data;
-                console.log(tempGroupTasksRepo);
                 var groupTaskTemp = tempGroupTasksRepo.filter((groupTask) => (groupTask._id === localStorage.getItem('selectedGroupTaskId')));
                 setTaskTitle(groupTaskTemp[0].title);
                 setTaskDescription(groupTaskTemp[0].description);
@@ -33,14 +32,12 @@ const SelectedGroupTaskPage = () => {
             axios.get('/app/groupTaskPosts/get')
             .then((response) => {
                 const tempGroupTaskPostsRepo = response.data;
-                console.log(tempGroupTaskPostsRepo);
                 setGroupTaskPostsRepo(tempGroupTaskPostsRepo);
             });
 
             axios.get('/app/users/get')
             .then((response) => {
                 const tempUsersRepo = response.data;
-                console.log(tempUsersRepo);
                 setUsersRepo(tempUsersRepo);
             });
         }
@@ -135,13 +132,16 @@ const SelectedGroupTaskPage = () => {
                     ></textarea>
                     <button onClick={() =>{ createPost() } } className='groupTaskInfoCreatePostButton'>Create Post</button>
                     
-                    {groupTaskPosts.map((groupTaskPost) => (
-                        <GroupTaskPost
-                            name={groupTaskPost.name}
-                            date={groupTaskPost.date} 
-                            text={groupTaskPost.text}
-                        />
-                    ))}
+                    <div className='groupTaskPostContainer'>
+                        {groupTaskPosts.map((groupTaskPost) => (
+                            <GroupTaskPost
+                                name={groupTaskPost.name}
+                                date={groupTaskPost.date} 
+                                text={groupTaskPost.text}
+                            />
+                        ))}
+                    </div>
+                    
 
                     <Link to={'/group-tasks'}>
                         <button className='groupTaskInfoBackButton'>Back to Group Tasks</button>

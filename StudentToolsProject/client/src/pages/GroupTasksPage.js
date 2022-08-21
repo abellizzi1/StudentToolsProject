@@ -18,7 +18,6 @@ const GroupTasksPage = () => {
         axios.get('/app/groupTasks/get')
             .then((response) => {
                 const tempGroupTasksRepo = response.data;
-                console.log(tempGroupTasksRepo);
                 setGroupTasksRepo(tempGroupTasksRepo);
             });
        
@@ -59,7 +58,6 @@ const GroupTasksPage = () => {
             }
         }
         existingGroupTask[0].group = groupTemp;
-        console.log(existingGroupTask[0]);
 
         axios.put("/app/groupTasks/put/" + id, existingGroupTask[0])
             .then(response => console.log(response.data));

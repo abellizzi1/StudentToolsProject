@@ -279,7 +279,8 @@
   }
 
   .groupTaskInfoPostBorder {
-	margin-bottom:25px;
+	margin-top:10px;
+	margin-bottom:20px;
 	margin-left:30px;
 	margin-right:30px;
 	border-width:3px;
@@ -420,6 +421,11 @@
 	margin-top:12px;
 }
 
+.groupTaskPostContainer {
+	height:650px;
+	overflow-y:scroll;
+}
+
 @media (max-width: 768px) {
 
 	.deadlineToolbar {
@@ -537,4 +543,45 @@
 		margin-bottom:-10px;
 	}
 
+	.groupTaskInfoBox {
+		width:90%;
+		position:absolute;
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:830px;
+	}
+
+	.groupTaskInfoBackButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		margin-top:50px;
+		font-size:20px;
+		width:250px;
+	}
+
+	.groupTaskInfoCreatePostText {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:90%;
+		margin-bottom: -20px;
+	}
+
+	.groupTaskInfoCreatePostButton {
+		margin-left:50%;
+		transform: translate(-50%, -50%);
+		width:200px;
+		margin-top:0;
+	}
+
+	.groupTaskInfoPostName {
+		font-size:22px;
+	}
+
+	.groupTaskInfoPosts {
+		font-size:18px;
+	}
+
+	.groupTaskInformationHeader{
+		margin-bottom:60px;
+	}
 }

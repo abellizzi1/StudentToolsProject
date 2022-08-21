@@ -18,14 +18,12 @@ const MessagesPage = () => {
         axios.get('/app/users/get')
             .then((response) => {
                 const tempUsersRepo = response.data;
-                console.log(tempUsersRepo);
                 setUsersRepo(tempUsersRepo);
             });
 
         axios.get('/app/messages/get')
             .then((response) => {
                 const tempMessagesRepo = response.data;
-                console.log(tempMessagesRepo);
                 setMessagesRepo(tempMessagesRepo);
             });
        
@@ -43,8 +41,6 @@ const MessagesPage = () => {
 
     const setConversationsState = () => {
         var loginEmail = localStorage.getItem('loggedInEmail');
-        console.log(localStorage.getItem('loggedInEmail'));
-        console.log(messagesRepo);
         var conversationsArrayTemp = [];
         
         for (let i = 0; i < messagesRepo.length; i++) {
@@ -72,7 +68,6 @@ const MessagesPage = () => {
                 }
             }
         }
-        console.log(conversationsArrayTemp);
         setConversations(conversationsArrayTemp);
     }
 

@@ -18,7 +18,6 @@ const ProfilePage = () => {
             axios.get('/app/users/get')
             .then((response) => {
                 const tempUsersRepo = response.data;
-                console.log(tempUsersRepo);
                 setUsersRepo(tempUsersRepo);
 
                 var mainUser = usersRepo.filter((user) => user.email === localStorage.getItem('loggedInEmail'));
