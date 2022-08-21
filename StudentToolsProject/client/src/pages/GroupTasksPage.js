@@ -84,7 +84,7 @@ const GroupTasksPage = () => {
             className='addTaskButton'>
             {<FaIcons.FaPen />} Create Group Task
             </button>
-            <p className='errorMessageGroupTasks' id='msg'></p>
+            <p className='errorMessageGroupTasks' id='msg'>Must be logged in</p>
 
             <div>
                 {groupTasks.map((groupTask) => (
@@ -97,6 +97,97 @@ const GroupTasksPage = () => {
                         handleClose={closeOnClick}
                     />
                 ))}
+            </div>
+
+            <div  className='task'>
+                <h1 className='taskTitle'>
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                </h1>
+                <p className='taskText'>
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                </p>
+
+                <div className='task-toolbar'>
+                    <h2 className='deadlineToolbar'>
+                    Deadline: 08/08/2022
+                    </h2>
+                    <button className='viewMoreButton'>View More</button>
+                    <button 
+                        className='taskCloseButton'>
+                        {<FaIcons.FaWindowClose />}
+                    </button>
+                </div>
+            </div>
+            <div  className='task'>
+                <h1 className='taskTitle'>
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                </h1>
+                <p className='taskText'>
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                </p>
+
+                <div className='task-toolbar'>
+                    <h2 className='deadlineToolbar'>
+                    Deadline: 08/08/2022
+                    </h2>
+                    <button className='viewMoreButton'>View More</button>
+                    <button 
+                        className='taskCloseButton'>
+                        {<FaIcons.FaWindowClose />}
+                    </button>
+                </div>
+            </div>
+            <div  className='task'>
+                <h1 className='taskTitle'>
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                This is a title This is a title This is a title This is a title This is a title 
+                </h1>
+                <p className='taskText'>
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text 
+                This is the text This is the text This is the text This is the text This is the text This is the text This is the text This is the text
+                </p>
+
+                <div className='task-toolbar'>
+                    <h2 className='deadlineToolbar'>
+                    Deadline: 08/08/2022
+                    </h2>
+                    <button className='viewMoreButton'>View More</button>
+                    <button 
+                        className='taskCloseButton'>
+                        {<FaIcons.FaWindowClose />}
+                    </button>
+                </div>
             </div>
         </div>
     )

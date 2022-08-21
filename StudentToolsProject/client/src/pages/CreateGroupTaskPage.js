@@ -92,6 +92,10 @@ const CreateGroupTaskPage = () => {
             var tempTitle = document.getElementById('task-title').value;
             var tempText = document.getElementById('task-text').value;
             var tempDate = document.getElementById('taskDate').value;
+            if (tempDate.length === 0)
+            {
+                tempDate = "None";
+            }
 
             const newGroupTask = {
                 title:tempTitle,
