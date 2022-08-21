@@ -48,9 +48,7 @@
 }
 
 .registerButton:active {
-	padding: 7px 22px;
-	margin-top: 32px;
-	margin-left:261px;
+	background-color: rgb(3, 28, 34);
 }
 
 .loginButton {
@@ -77,9 +75,7 @@
 }
 
 .loginButton:active {
-	padding: 7px 22px;
-	margin-top: 22px;
-	margin-left:274px;
+	background-color: rgb(6, 101, 116);
 }
 
 .registerLabels {
@@ -144,7 +140,6 @@
 		margin-top: 20px;
 		margin-bottom:30px;
 	}
-
 	.loginButton {
 		margin-top:15%;
 	}

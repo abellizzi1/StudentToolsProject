@@ -378,6 +378,7 @@
 		width:90%;
 		margin-top:370px;
 		height:700px;
+		position:absolute;
 	}
 
 	.taskInformationHeader {
@@ -419,7 +420,7 @@
 
 	.deadlineLabel {
 		margin-left:20px;
-		font-size:22px;
+		font-size:20px;
 	}
 
 	.dateFormTasks {
