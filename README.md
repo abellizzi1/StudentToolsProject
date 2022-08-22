@@ -23,9 +23,9 @@ A conversation is started by clicking "Send Message" on the Friends page. After 
 
 ## Features Accessible As a Guest
 ### Notes
-Guests are able to create notes and they will be automatically saved on-change. For desktop users, they save to local storage, but for mobile users, they are only saved in the current session.
+Guests are able to create notes and they will be automatically saved on-change. They are saved to local storage for both desktop and mobile users.
 ![Notes Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/NotesPage.png)
 
 ### Tasks
-Guests can create tasks with a title, description, and deadline to keep track of what they have to do. Similar to the Notes tool, they will be saved to local storage for desktop users, but only saved in the current session for mobile users.
+Guests can create tasks with a title, description, and deadline to keep track of what they have to do. Similar to the Notes tool, they will be saved to local storage for desktop and mobile users.
 ![Tasks Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/TasksPage.png)
