@@ -9,7 +9,7 @@ I created this website with the goal of making it easy for students to organize 
 
 ## Features Accessible Only While Logged In
 ### Friends
-To add a friend, the user must enter the recipient's email and add them. Then, the recipient must add the user back for them to become friends. After two people are friends, they are able to send each other messages and add each other to group tasks.
+To add a friend, the user must enter the recipient's email and add them. Then, the recipient must add the user back for them to become friends. After two people are friends, they are able to send each other messages and add each other to group tasks. (Both accounts must be already registered)
 ![Friends Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/FriendsPage.png)
 
 ### Group Tasks
