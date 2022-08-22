@@ -19,13 +19,14 @@ const SelectedGroupTaskPage = () => {
 
     const getRepo = () => {
 
+        var tempTaskGroup = [];
         axios.get('/app/groupTasks/get')
             .then((response) => {
                 const tempGroupTasksRepo = response.data;
                 var groupTaskTemp = tempGroupTasksRepo.filter((groupTask) => (groupTask._id === localStorage.getItem('selectedGroupTaskId')));
+                tempTaskGroup = tempGroupTasksRepo.filter((groupTask) => (groupTask._id === localStorage.getItem('selectedGroupTaskId')));
                 setTaskTitle(groupTaskTemp[0].title);
                 setTaskDescription(groupTaskTemp[0].description);
-                setTaskGroup(groupTaskTemp[0].group);
                 setTaskDeadline(groupTaskTemp[0].deadline);
             });
 
@@ -39,6 +40,13 @@ const SelectedGroupTaskPage = () => {
             .then((response) => {
                 const tempUsersRepo = response.data;
                 setUsersRepo(tempUsersRepo);
+                var finalTaskGroup = [];
+
+                for (let i = 0; i < tempTaskGroup[0].group.length; i++) {
+                    var groupMemberTemp = tempUsersRepo.filter((member) => (member.email === tempTaskGroup[0].group[i]));
+                    finalTaskGroup.push(groupMemberTemp[0].firstName + " " + groupMemberTemp[0].lastName);
+                }
+                setTaskGroup(finalTaskGroup);
             });
         }
 
