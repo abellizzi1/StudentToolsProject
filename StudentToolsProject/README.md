@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Student Tools Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website is deployed on Heroku: https://student-tools-project.herokuapp.com/
 
-## Available Scripts
+**(Do not use the version on github pages)**
 
-In the project directory, you can run:
+### A responsive MERN website with many useful student tools.
+I created this website with the goal of making it easy for students to organize group assignments and their own assignments/notes. Some tools include Notes, Tasks, Group Tasks, and Messaging. Certain tools can only be accessed while logged in, while other tools can be accessed as a guest.
 
-### `npm start`
+## Features Accessible Only While Logged In
+### Friends
+To add a friend, the user must enter the recipient's email and add them. Then, the recipient must add the user back for them to become friends. After two people are friends, they are able to send each other messages and add each other to group tasks.
+![Friends Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/FriendsPage.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Group Tasks
+If a user has friends added, they are able to create a task and share it with those friends to create a group. A task includes a title, description, and a deadline. Once a task and its group is created, any of the group members can create more posts within the task to discuss anything they need to. 
+![Create Group Task Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/CreateGroupTaskPage.png)
+![Selected Group Task Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/SelectedGroupTaskPage.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Messaging
+A conversation is started by clicking "Send Message" on the Friends page. After a conversation is started, it will show up in the Messages page for both the sender and recipient and they can continue sending messages on the Messages page.
+![Messages Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/MessagesPage.png)
 
-### `npm test`
+## Features Accessible As a Guest
+### Notes
+Guests are able to create notes and they will be automatically saved on-change. For desktop users, they save to local storage, but for mobile users, they are only saved in the current session.
+![Notes Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/NotesPage.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Tasks
+Guests can create tasks with a title, description, and deadline to keep track of what they have to do. Similar to the Notes tool, they will be saved to local storage for desktop users, but only saved in the current session for mobile users.
+![Tasks Page](https://github.com/abellizzi1/StudentToolsProject/blob/main/README-pics/TasksPage.png)
