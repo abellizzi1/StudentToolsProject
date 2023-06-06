@@ -1,9 +1,4 @@
 # Student Tools Project
-
-This website is deployed on Heroku: https://student-tools-project.herokuapp.com/
-
-**(Do not use the version on github pages)**
-
 ### A responsive MERN website with many useful student tools.
 I created this website with the goal of making it easy for students to organize group assignments and their own assignments/notes. Some tools include Notes, Tasks, Group Tasks, and Messaging. Certain tools can only be accessed while logged in, while other tools can be accessed as a guest.
 
